@@ -1,0 +1,53 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <display-name>Archetype Created Web Application</display-name>
+    <!--注册声明过滤器，解决post请求乱码的问题-->
+    <filter>
+        <filter-name>characterEncodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+
+        <!--设置项目中使用的字符编码-->
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+
+        <!--强制请求对象（HttpServletRequest）使用encoding编码的值-->
+        <init-param>
+            <param-name>forceRequestEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <!--强制请求对象（HttpServletResponse）使用encoding编码的值-->
+        <init-param>
+            <param-name>forceResponseEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>characterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- 配置spring mvc的核心控制器 -->
+    <servlet>
+        <servlet-name>SpringMVCDispatcherServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!-- 配置初始化参数，用于读取SpringMVC的配置文件 -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:springmvc.xml</param-value>
+        </init-param>
+        <!-- 配置servlet的对象创建的时间点：应用加载时创建。
+        如果该元素的值为负数或者没有设置，则容器会当servlet被请求的时候加载。
+        如果值为正整数时或者0时，表示容器在应用启动时就加载并初始化这个servlet，值越小，servlet的优先级越高，越先被加载-->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <!-- 所有的请求都会执行对应的这个方法 -->
+    <servlet-mapping>
+        <servlet-name>SpringMVCDispatcherServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+</web-app>

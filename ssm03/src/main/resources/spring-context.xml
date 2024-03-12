@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="log" class="com.mashang.service.Log"/>
+    <bean id="userLoginService" class="com.mashang.service.UserLoginService"/>
+
+    <aop:config>
+        <aop:aspect id="logAdvice" ref="log">
+<!--            <aop:before method="beforeLog" pointcut="execution(* *..*.*(..))"/>-->
+<!--            <aop:after method="afterLog" pointcut="execution(* *..*.*(..))"/>-->
+<!--            <aop:after-throwing method="exceptionLog" pointcut="execution(* *..*.*(..))"/>-->
+<!--            <aop:after-returning method="afterReturning" pointcut="execution(* *..*.*(..))"/>-->
+            <aop:around method="aroundLog" pointcut="execution(void com.mashang.service.UserLoginService.userLoginAround())"/>
+        </aop:aspect>
+
+    </aop:config>
+
+</beans>

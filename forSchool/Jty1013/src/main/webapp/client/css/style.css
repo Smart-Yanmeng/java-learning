@@ -1,0 +1,46 @@
+.container{
+    display: flex;
+    background-color: rgb(93, 75, 51); 
+    justify-content: space-around;
+}
+.nav{
+    width: 800px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+   
+}
+.nav ul{
+    list-style-type:none;
+   
+}
+
+
+.nav li{
+    list-style-type:none;
+}
+.nav li a{
+   
+    text-decoration: none;
+    color: white;
+
+}
+
+.nav li a:hover{
+   
+    background-color: orange;
+
+}
+
+#divcontent{
+    margin: 0 auto;
+    width: 1200px;
+    background-color: rgb(252, 253, 239);
+}
+
+#divcontent table{
+    padding-left: 50px;;
+    width: 800px;
+    background-color: rgb(252, 253, 239);
+}

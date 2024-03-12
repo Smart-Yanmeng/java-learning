@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mashang.xiaomishopping.dao.IAreaDao">
+
+    <select id="queryAreaByCondition" resultType="com.mashang.xiaomishopping.entity.BAreaEntity">
+        SELECT * FROM b_area
+        <where>
+            <if test="pid != null and pid != ''">
+                AND pid = #{pid}
+            </if>
+        </where>
+    </select>
+
+</mapper>

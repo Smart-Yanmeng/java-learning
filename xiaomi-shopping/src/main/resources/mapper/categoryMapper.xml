@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mashang.xiaomishopping.dao.ICategoryDao">
+
+    <select id="selectCategoryListByCondition" resultType="com.mashang.xiaomishopping.entity.BCategoryEntity">
+        select *
+        from b_category
+        <where>
+            <if test="categoryId != null and categoryId != ''">
+                and category_id = #{categoryId}
+            </if>
+            <if test="categoryName != null and categoryName != ''">
+                and category_name = #{categoryName}
+            </if>
+        </where>
+        order by sort DESC
+    </select>
+
+    <select id="selectHotProductCategoryList"
+            resultType="com.mashang.xiaomishopping.entity.BHotProductCategoryEntity">
+        select *
+        from b_category
+        order by sort DESC
+    </select>
+
+</mapper>

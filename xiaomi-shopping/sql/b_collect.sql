@@ -1,0 +1,1 @@
+INSERT INTO `b_collect` (`user_id`, `collect_id`, `product_id`, `product_name`, `product_picture`, `product_price`, `product_selling_price`, `product_title`, `create_time`) VALUES (13, 24, 4, '商品4', '第四个商品的封面', 100, 200, '商品4', '2022-11-11 17:48:36');

@@ -1,0 +1,10 @@
+2023-08-04 11:45:21,911 [/] INFO  [main] o.s.b.StartupInfoLogger - Starting Springboot01Application using Java 1.8.0_361 on MARGUERITE with PID 13804 (C:\Users\yorky\OneDrive\桌面\STUDY\Java\springboot01\target\classes started by yorky in C:\Users\yorky\OneDrive\桌面\STUDY\Java\springboot01)
+2023-08-04 11:45:21,916 [/] DEBUG [main] o.s.b.StartupInfoLogger - Running with Spring Boot v2.7.4, Spring v5.3.23
+2023-08-04 11:45:21,917 [/] INFO  [main] o.s.b.SpringApplication - No active profile set, falling back to 1 default profile: "default"
+2023-08-04 11:45:22,532 [/] INFO  [main] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2023-08-04 11:45:22,538 [/] INFO  [main] o.a.j.l.DirectJDKLog - Starting service [Tomcat]
+2023-08-04 11:45:22,538 [/] INFO  [main] o.a.j.l.DirectJDKLog - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-08-04 11:45:22,622 [/] INFO  [main] o.a.j.l.DirectJDKLog - Initializing Spring embedded WebApplicationContext
+2023-08-04 11:45:22,623 [/] INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 668 ms
+2023-08-04 11:45:23,071 [/] INFO  [main] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path '/springboot01'
+2023-08-04 11:45:23,078 [/] INFO  [main] o.s.b.StartupInfoLogger - Started Springboot01Application in 1.435 seconds (JVM running for 2.347)

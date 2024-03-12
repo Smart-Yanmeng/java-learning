@@ -1,0 +1,26 @@
+2023-03-05 23:45:11.159 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.0.20.Final
+2023-03-05 23:45:11.165 [main] INFO  c.mashang.xiaomishopping.XiaomiShoppingApplication - Starting XiaomiShoppingApplication using Java 18.0.2 on MARGUERITE with PID 30400 (C:\Users\yorky\Desktop\STUDY\Java\xiaomi-shopping\target\classes started by yorky in C:\Users\yorky\Desktop\STUDY\Java\xiaomi-shopping)
+2023-03-05 23:45:11.166 [main] DEBUG c.mashang.xiaomishopping.XiaomiShoppingApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2023-03-05 23:45:11.166 [main] INFO  c.mashang.xiaomishopping.XiaomiShoppingApplication - No active profile set, falling back to 1 default profile: "default"
+2023-03-05 23:45:12.379 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2023-03-05 23:45:12.386 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2023-03-05 23:45:12.386 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-03-05 23:45:12.386 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-03-05 23:45:12.473 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/xiaomi] - Initializing Spring embedded WebApplicationContext
+2023-03-05 23:45:12.473 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1267 ms
+2023-03-05 23:45:13.102 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2023-03-05 23:45:13.114 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path '/xiaomi'
+2023-03-05 23:45:13.364 [main] INFO  c.mashang.xiaomishopping.XiaomiShoppingApplication - Started XiaomiShoppingApplication in 2.458 seconds (JVM running for 5.141)
+2023-03-05 23:46:17.264 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.0.20.Final
+2023-03-05 23:46:17.267 [main] INFO  c.mashang.xiaomishopping.XiaomiShoppingApplication - Starting XiaomiShoppingApplication using Java 18.0.2 on MARGUERITE with PID 2932 (C:\Users\yorky\Desktop\STUDY\Java\xiaomi-shopping\target\classes started by yorky in C:\Users\yorky\Desktop\STUDY\Java\xiaomi-shopping)
+2023-03-05 23:46:17.268 [main] DEBUG c.mashang.xiaomishopping.XiaomiShoppingApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2023-03-05 23:46:17.268 [main] INFO  c.mashang.xiaomishopping.XiaomiShoppingApplication - No active profile set, falling back to 1 default profile: "default"
+2023-03-05 23:46:18.219 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2023-03-05 23:46:18.225 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2023-03-05 23:46:18.225 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-03-05 23:46:18.225 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-03-05 23:46:18.289 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/xiaomi] - Initializing Spring embedded WebApplicationContext
+2023-03-05 23:46:18.290 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 980 ms
+2023-03-05 23:46:18.941 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2023-03-05 23:46:18.953 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path '/xiaomi'
+2023-03-05 23:46:19.210 [main] INFO  c.mashang.xiaomishopping.XiaomiShoppingApplication - Started XiaomiShoppingApplication in 2.152 seconds (JVM running for 3.078)

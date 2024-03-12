@@ -1,0 +1,41 @@
+2023-01-14 14:17:57,230 [/] INFO  [main] o.s.b.StartupInfoLogger - Starting StudyApplication using Java 17.0.4.1 on MARGUERITE with PID 4740 (C:\Users\yorky\Desktop\STUDY\Java\study\target\classes started by yorky in C:\Users\yorky\Desktop\STUDY\Java\study)
+2023-01-14 14:17:57,234 [/] INFO  [main] o.s.b.SpringApplication - No active profile set, falling back to 1 default profile: "default"
+2023-01-14 14:17:57,871 [/] WARN  [main] o.m.l.Logger - No MyBatis mapper was found in '[com.mashang.study]' package. Please check your configuration.
+2023-01-14 14:17:58,180 [/] INFO  [main] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2023-01-14 14:17:58,187 [/] INFO  [main] o.a.j.l.DirectJDKLog - Starting service [Tomcat]
+2023-01-14 14:17:58,188 [/] INFO  [main] o.a.j.l.DirectJDKLog - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-14 14:17:58,260 [/] INFO  [main] o.a.j.l.DirectJDKLog - Initializing Spring embedded WebApplicationContext
+2023-01-14 14:17:58,261 [/] INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 983 ms
+2023-01-14 14:17:58,704 [/] INFO  [main] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path '/xiaomi'
+2023-01-14 14:17:58,808 [/] INFO  [main] o.s.b.StartupInfoLogger - Started StudyApplication in 1.91 seconds (JVM running for 2.445)
+2023-01-14 14:19:34,036 [/] INFO  [main] o.s.b.StartupInfoLogger - Starting StudyApplication using Java 17.0.4.1 on MARGUERITE with PID 10312 (C:\Users\yorky\Desktop\STUDY\Java\study\target\classes started by yorky in C:\Users\yorky\Desktop\STUDY\Java\study)
+2023-01-14 14:19:34,039 [/] INFO  [main] o.s.b.SpringApplication - No active profile set, falling back to 1 default profile: "default"
+2023-01-14 14:19:34,677 [/] WARN  [main] o.m.l.Logger - No MyBatis mapper was found in '[com.mashang.study]' package. Please check your configuration.
+2023-01-14 14:19:34,929 [/] INFO  [main] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2023-01-14 14:19:34,936 [/] INFO  [main] o.a.j.l.DirectJDKLog - Starting service [Tomcat]
+2023-01-14 14:19:34,936 [/] INFO  [main] o.a.j.l.DirectJDKLog - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-14 14:19:35,009 [/] INFO  [main] o.a.j.l.DirectJDKLog - Initializing Spring embedded WebApplicationContext
+2023-01-14 14:19:35,010 [/] INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 926 ms
+2023-01-14 14:19:35,451 [/] INFO  [main] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path '/xiaomi'
+2023-01-14 14:19:35,560 [/] INFO  [main] o.s.b.StartupInfoLogger - Started StudyApplication in 1.869 seconds (JVM running for 2.447)
+2023-01-14 14:43:52,192 [/] INFO  [main] o.s.b.StartupInfoLogger - Starting StudyApplication using Java 17.0.4.1 on MARGUERITE with PID 35244 (C:\Users\yorky\Desktop\STUDY\Java\study\target\classes started by yorky in C:\Users\yorky\Desktop\STUDY\Java\study)
+2023-01-14 14:43:52,194 [/] INFO  [main] o.s.b.SpringApplication - No active profile set, falling back to 1 default profile: "default"
+2023-01-14 14:43:52,800 [/] WARN  [main] o.m.l.Logger - No MyBatis mapper was found in '[com.mashang.study]' package. Please check your configuration.
+2023-01-14 14:43:53,094 [/] INFO  [main] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2023-01-14 14:43:53,100 [/] INFO  [main] o.a.j.l.DirectJDKLog - Starting service [Tomcat]
+2023-01-14 14:43:53,100 [/] INFO  [main] o.a.j.l.DirectJDKLog - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-14 14:43:53,174 [/] INFO  [main] o.a.j.l.DirectJDKLog - Initializing Spring embedded WebApplicationContext
+2023-01-14 14:43:53,174 [/] INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 944 ms
+2023-01-14 14:43:53,666 [/] INFO  [main] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path '/xiaomi'
+2023-01-14 14:43:53,779 [/] INFO  [main] o.s.b.StartupInfoLogger - Started StudyApplication in 1.905 seconds (JVM running for 2.478)
+2023-01-14 14:44:12,414 [/] INFO  [main] o.s.b.StartupInfoLogger - Starting StudyApplication using Java 17.0.4.1 on MARGUERITE with PID 33912 (C:\Users\yorky\Desktop\STUDY\Java\study\target\classes started by yorky in C:\Users\yorky\Desktop\STUDY\Java\study)
+2023-01-14 14:44:12,417 [/] DEBUG [main] o.s.b.StartupInfoLogger - Running with Spring Boot v2.7.4, Spring v5.3.23
+2023-01-14 14:44:12,417 [/] INFO  [main] o.s.b.SpringApplication - No active profile set, falling back to 1 default profile: "default"
+2023-01-14 14:44:13,026 [/] WARN  [main] o.m.l.Logger - No MyBatis mapper was found in '[com.mashang.study]' package. Please check your configuration.
+2023-01-14 14:44:13,290 [/] INFO  [main] o.s.b.w.e.t.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2023-01-14 14:44:13,297 [/] INFO  [main] o.a.j.l.DirectJDKLog - Starting service [Tomcat]
+2023-01-14 14:44:13,297 [/] INFO  [main] o.a.j.l.DirectJDKLog - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-14 14:44:13,382 [/] INFO  [main] o.a.j.l.DirectJDKLog - Initializing Spring embedded WebApplicationContext
+2023-01-14 14:44:13,383 [/] INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 926 ms
+2023-01-14 14:44:13,912 [/] INFO  [main] o.s.b.w.e.t.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path '/xiaomi'
+2023-01-14 14:44:14,025 [/] INFO  [main] o.s.b.StartupInfoLogger - Started StudyApplication in 1.945 seconds (JVM running for 2.496)

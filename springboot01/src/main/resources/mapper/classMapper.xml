@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboottest.springboot01.dao.IUserDao">
+
+    <select id="findById" resultType="classes">
+        select *
+        from t_class
+        where class_id = #{id};
+
+    </select>
+
+    <insert id="insertClasses" parameterType="Classes">
+        insert into t_class
+        values (#{classId}, #{classNo}, #{createTime}, #{name}, #{remark}, #{type})
+    </insert>
+
+</mapper>

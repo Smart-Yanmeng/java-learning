@@ -1,0 +1,177 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>首页</title>
+<!--    <link rel="stylesheet" href="css/main.css" type="text/css"/>-->
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <!-- 导入首页轮播图css和js脚本 -->
+<!--    <link type="text/css" href="css/autoplay.css" rel="stylesheet"/>-->
+<!--    <script type="text/javascript" src="js/autoplay.js"></script>-->
+</head>
+
+<body class="main">
+<!-- 1.网上书城顶部 start -->
+<div id="divhead">
+    <!--header 顶部导航栏 -->
+    <div class="header">
+        <div class="container">
+            <nav class="navbar navbar-default" role="navigation">
+                <!--navbar-header-->
+                <div class="collapse navbar-collapse" id="bs-example-navbar collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/index">首页</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle " data
+                               toggle="dropdown">商品分类<b class="caret"></b></a>
+                            <ul class="dropdown-menu multi-column columns-2">
+                                <li>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h4>商品分类</h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">热销</a></li>
+                        <li><a href="#">新品</a></li>
+                        <li><a href="#" class="active">注册</a></li>
+                        <li><a href="#">登录</a></li>
+                    </ul>
+                    <!--/.navbar-collapse-->
+                </div>
+                <!--//navbar-header-->
+            </nav>
+            <div class="header-info">
+                <div class="header-right search-box">
+                    <a href="javascript:;">
+                        <span class="glyphicon glyphicon search" aria-hidden="true"></span>
+                    </a>
+                    <div class="search">
+                        <form class="navbar-form" action="/goods_search">
+                            <input type="text" class="form-control"
+                                   name="keyword">
+                            <button type="submit" class="btn btn-default" aria
+                                    label="Left Align">搜索
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="header-right cart">
+                    <a href="goods_cart.jsp">
+<span class="glyphicon glyphicon-shopping-cart " aria
+      hidden="true"><span class="card_num"></span></span>
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!--//header-->
+</div>
+
+<!-- 3.网上书城用户注册  start -->
+<div id="divcontent" align="center">
+    <form action="registersuccess.html" method="post" onsubmit="return checkForm();">
+        <table width="850px" border="0" cellspacing="0">
+            <tr>
+                <td style="padding: 30px"><h1>新会员注册</h1>
+                    <table width="70%" border="0" cellspacing="2"
+                           class="upline">
+                        <tr>
+                            <td style="text-align: right; width: 20%">
+                                会员邮箱：
+                            </td>
+                            <td style="width: 40%">
+                                <input type="text" class="textinput"
+                                       id="email" name="email" onkeyup="checkEmail();"/>
+                            </td>
+                            <td colspan="2"><span
+                                    id="emailMsg"></span><font color="#999999">请输入有效的邮箱地址</font></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right">会员名：</td>
+                            <td><input type="text" class="textinput"
+                                       id="username" name="username" onkeyup="checkUsername();"/>
+                            </td>
+                            <td colspan="2"><span
+                                    id="usernameMsg"></span><font color="#999999">字母数字下划线1到10位, 不能是数
+                                字开头</font></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right">密码：</td>
+                            <td><input type="password"
+                                       class="textinput" id="password" name="password"
+                                       onkeyup="checkPassword();"/></td>
+                            <td><span id="passwordMsg"></span><font
+                                    color="#999999">密码请设置6-16位字符</font></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right">重复密码：
+                            </td>
+                            <td>
+                                <input type="password" class="textinput"
+                                       id="repassword" name="repassword" onkeyup="checkConfirm();"/>
+                            </td>
+                            <td><span
+                                    id="confirmMsg"></span>&nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right">性别：</td>
+                            <td colspan="2">&nbsp;&nbsp;
+                                <input type="radio" name="gender" value="男" checked="checked"/>
+                                男&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="radio" name="gender"
+                                       value="女"/> 女
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right">联系电话：
+                            </td>
+                            <td colspan="2">
+                                <input type="text" class="textinput"
+                                       style="width: 350px" name="telephone"
+                                />
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right">个人介绍：
+                            </td>
+                            <td colspan="2">
+                                <textarea class="textarea"
+                                          name="introduce"></textarea>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+
+
+                    <table width="70%" border="0" cellspacing="0">
+                        <tr>
+                            <td style="padding-top: 20px; text-align: center">
+                                <input type="image"
+                                       src="images/signup.gif" name="submit" border="0"/>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<!--footer-->
+<div class="footer">
+    <div class="container">
+        <div class="text-center">
+            <p>茶智旅 www.yifutea.com © All rights Reseverd</p>
+        </div>
+    </div>
+</div>
+<!--//footer-->
+</body>
+</html>

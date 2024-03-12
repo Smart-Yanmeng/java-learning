@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mashang.xiaomishopping.dao.ICollectDao">
+
+    <select id="queryCollectProductInfoList" resultType="com.mashang.xiaomishopping.entity.BCollectEntity">
+        SELECT *
+        FROM b_collect
+        <where>
+            <if test="userId != null and userId != ''">
+                AND user_id = #{userId}
+            </if>
+        </where>
+    </select>
+
+    <insert id="createCollectProduct" parameterType="com.mashang.xiaomishopping.vo.collect.CollectProductVo">
+        INSERT INTO b_collect(user_id, product_id, product_name, product_picture, product_price, product_selling_price,
+                              product_title, create_time)
+        VALUES (#{userId}, #{productId}, #{productName}, #{productPicture}, #{productPrice}, #{productSellingPrice},
+                #{productTitle}, #{createTime})
+    </insert>
+
+    <delete id="deleteCollectProduct">
+        DELETE FROM b_collect
+        <where>
+            <if test="userId != null and userId != ''">
+                AND user_id = #{userId}
+            </if>
+            <if test="productId != null and productId != ''">
+                AND product_id = #{productId}
+            </if>
+        </where>
+    </delete>
+
+    <select id="selectProductIsCollectByCondition" resultType="java.lang.Integer">
+        SELECT DISTINCT IF(EXISTS(SELECT 1 FROM b_collect
+        <where>
+            <if test="userId != null and userId != ''">
+                AND user_id = #{userId}
+            </if>
+            <if test="productId != null and productId != ''">
+                AND product_id = #{productId}
+            </if>
+        </where>
+        ), 1, 0)
+    </select>
+
+    <select id="queryProductByCondition" resultType="com.mashang.xiaomishopping.entity.BProductEntity">
+        SELECT * FROM b_product
+        <where>
+            <if test="productId != null and product != ''">
+                AND product_id = #{productId}
+            </if>
+        </where>
+    </select>
+
+</mapper>

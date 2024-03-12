@@ -1,0 +1,16 @@
+2023-03-06 00:08:40.299 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.0.20.Final
+2023-03-06 00:08:40.303 [main] INFO  c.mashang.xiaomishopping.XiaomiShoppingApplication - Starting XiaomiShoppingApplication using Java 18.0.2 on MARGUERITE with PID 11964 (C:\Users\yorky\Desktop\STUDY\Java\xiaomi-shopping\target\classes started by yorky in C:\Users\yorky\Desktop\STUDY\Java\xiaomi-shopping)
+2023-03-06 00:08:40.303 [main] DEBUG c.mashang.xiaomishopping.XiaomiShoppingApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2023-03-06 00:08:40.303 [main] INFO  c.mashang.xiaomishopping.XiaomiShoppingApplication - No active profile set, falling back to 1 default profile: "default"
+2023-03-06 00:08:41.127 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2023-03-06 00:08:41.134 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2023-03-06 00:08:41.134 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-03-06 00:08:41.134 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-03-06 00:08:41.201 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/xiaomi] - Initializing Spring embedded WebApplicationContext
+2023-03-06 00:08:41.201 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 856 ms
+2023-03-06 00:08:41.819 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2023-03-06 00:08:41.831 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path '/xiaomi'
+2023-03-06 00:08:42.027 [main] INFO  c.mashang.xiaomishopping.XiaomiShoppingApplication - Started XiaomiShoppingApplication in 1.967 seconds (JVM running for 2.537)
+2023-03-06 00:08:56.019 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/xiaomi] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-03-06 00:08:56.019 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-03-06 00:08:56.020 [http-nio-8081-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms

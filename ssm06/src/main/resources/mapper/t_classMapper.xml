@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.dao.IClassDao">
+    <select id="selectClass" resultType="com.mybatis.entity.Clazz">
+        select *
+        from t_class
+        where class_id = 16597268031444;
+    </select>
+
+    <select id="selectClassById" resultType="com.mybatis.entity.Clazz">
+        select *
+        from t_class
+        where class_id = #{classId};
+    </select>
+
+    <select id="selectClassByClass" resultType="com.mybatis.entity.Clazz">
+        select *
+        from t_class
+        where class_id = #{classId};
+    </select>
+
+    <select id="selectClassByClassName" resultType="com.mybatis.entity.Clazz">
+        select *
+        from t_class
+        where class_id like #{classId};
+    </select>
+
+    <insert id="save" parameterType="com.mybatis.entity.Clazz">
+        insert into t_class(class_id, class_no, create_time, name, remark, type)
+        values (#{classId}, #{classNo}, #{createTime}, #{name}, #{remark}, #{type})
+    </insert>
+
+    <delete id="deleteById" parameterType="String">
+        delete
+        from t_class
+        where class_id = #{classId}
+    </delete>
+
+    <update id="updateById" parameterType="com.mybatis.entity.Clazz">
+        update t_class
+        set name = #{name}
+        where class_id = #{classId}
+    </update>
+
+</mapper>

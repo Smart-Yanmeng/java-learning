@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <entity id="student" class="com.mashang.model.Student">
+        <column name="name" value="ZhangSan"/>
+        <column name="age" value="18"/>
+        <column name="sex" value="1"/>
+    </entity>
+    <entity id="teacher" class="com.mashang.model.Teacher"/>
+</root>

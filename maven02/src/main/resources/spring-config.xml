@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--  将 UserInfoService 这个类交给 spring 管理, 并生成一个  -->
+    <bean scope="singleton" id="userInfoService" init-method="initUserInfoService" class="com.mashang.service.UserInfoService">
+        <constructor-arg name="name" value="zhangsan"/>
+        <constructor-arg name="age" value="18"/>
+        <constructor-arg name="teacherService" ref="teacherService"/>
+        <property name="height" value="180"/>
+    </bean>
+
+    <context:component-scan base-package="com.mashang"/>
+
+    <bean id="teacherService" class="com.mashang.service.TeacherService"/>
+
+</beans>

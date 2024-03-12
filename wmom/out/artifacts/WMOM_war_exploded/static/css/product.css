@@ -1,0 +1,41 @@
+.comm-main {
+  border: 1px solid darkgray;
+}
+.comm-main .comm-img {
+  height: 400px;
+}
+.comm-main .comm-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.comm-main .comm-center table td {
+  padding: 15px 10px;
+}
+
+#buy, #join {
+  width: 200px;
+  height: 40px;
+  cursor: pointer;
+}
+
+#buy {
+  border: none;
+  background-color: #FFE4E1;
+  color: red;
+  font-weight: bold;
+}
+
+#join {
+  background-color: #ff0036;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+#join > img {
+  width: 20px;
+  height: 20px;
+}
+
+/*# sourceMappingURL=product.css.map */

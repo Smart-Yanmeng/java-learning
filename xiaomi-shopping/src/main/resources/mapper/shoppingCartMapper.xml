@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mashang.xiaomishopping.dao.IShoppingCartDao">
+
+    <insert id="addShoppingCartProduct"
+            parameterType="com.mashang.xiaomishopping.vo.shoppingcartproduct.ShoppingCartProductVo">
+        INSERT INTO b_shopping_cart(product_id, user_id, product_name, product_picture, product_selling_price, num)
+        VALUES (#{productId}, #{userId}, #{productName}, #{productPicture}, #{productSellingPrice}, #{num})
+    </insert>
+
+    <update id="updateShoppingCartProductNum">
+        UPDATE b_shopping_cart SET num = #{num}
+        <where>
+            shopping_cart_id = #{shoppingCartId}
+        </where>
+    </update>
+
+    <delete id="deleteShoppingCartProduct">
+        DELETE FROM b_shopping_cart
+        <where>
+            shopping_cart_id = #{shoppCartId}
+        </where>
+    </delete>
+
+    <select id="selectShoppingCartListByCondition"
+            resultType="com.mashang.xiaomishopping.entity.BShoppingCartEntity">
+        SELECT * FROM b_shopping_cart
+        <where>
+            <if test="userId != null and userId != ''">
+                AND user_id = #{userId}
+            </if>
+        </where>
+    </select>
+
+    <select id="countShoppingCartProductNum" resultType="Integer">
+        SELECT COUNT(*) AS num
+        from b_shopping_cart
+    </select>
+
+    <select id="queryProductByCondition" parameterType="java.lang.Long"
+            resultType="com.mashang.xiaomishopping.entity.BProductEntity">
+        SELECT * FROM b_product
+        <where>
+            <if test="productId != null and productId != ''">
+                AND product_id = #{productId}
+            </if>
+        </where>
+    </select>
+
+</mapper>

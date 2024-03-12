@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mashang.xiaomishopping.dao.IOrderDao">
+
+    <select id="selectOrderListByCondition" parameterType="java.lang.Long"
+            resultType="com.mashang.xiaomishopping.entity.BOrderEntity">
+        select *
+        from b_order
+        <where>
+            user_id = #{userId}
+        </where>
+        order by sort DESC
+    </select>
+
+    <select id="selectOrderProductListByCondition"
+            resultType="com.mashang.xiaomishopping.entity.BOrderProductEntity">
+        select *
+        from b_order_product
+        WHERE order_id = #{orderId}
+        ORDER BY sort DESC
+    </select>
+
+    <select id="queryShoppingCartByCondition"
+            resultType="com.mashang.xiaomishopping.entity.BShoppingCartEntity">
+        SELECT * FROM b_shopping_cart
+        <where>
+            <if test="shoppingCartId != null and shoppingCartId != ''">
+                AND shopping_cart_id = #{shoppingCartId}
+            </if>
+        </where>
+    </select>
+
+    <select id="countOrder" resultType="java.lang.Long">
+        SELECT COUNT(*)
+        FROM b_order
+    </select>
+
+    <select id="queryOrderAddressByCondition" resultType="com.mashang.xiaomishopping.entity.BAddressEntity">
+        SELECT * FROM b_address
+        <where>
+            <if test="addressId != null and addressId != ''">
+                AND address_id = #{addressId}
+            </if>
+        </where>
+    </select>
+
+    <insert id="addOrder" parameterType="com.mashang.xiaomishopping.vo.order.OrderVo">
+        INSERT INTO b_order(address_dtl, address_tags, addressee, addressee_area, addressee_phone, order_id, order_num,
+                            order_time, user_id)
+        VALUES (#{addressDtl}, #{addressTags}, #{addressee}, #{addresseeArea}, #{addressPhone}, #{orderId}, #{orderNum},
+                #{orderTime}, #{userId})
+    </insert>
+
+    <insert id="addOrderProduct">
+        INSERT INTO b_order_product(order_id, num, order_dtl_id, product_id, product_name, product_picture,
+                                    product_selling_price)
+        VALUES (#{orderId}, #{num}, #{orderDtlId}, #{productId}, #{productName}, #{productPicture},
+                #{productSellingPrice})
+    </insert>
+
+    <delete id="deleteShoppingCartByCondition" parameterType="java.lang.Long">
+        DELETE FROM b_shopping_cart
+        <where>
+            <if test="shoppingCartId != null and shoppingCartId != ''">
+                AND shopping_cart_id = #{shoppingCartId}
+            </if>
+        </where>
+    </delete>
+
+</mapper>

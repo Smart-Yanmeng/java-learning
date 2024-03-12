@@ -1,0 +1,27 @@
+2023-01-14 14:46:00.189 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.0.20.Final
+2023-01-14 14:46:00.194 [main] INFO  com.mashang.study.StudyApplication - Starting StudyApplication using Java 17.0.4.1 on MARGUERITE with PID 35124 (C:\Users\yorky\Desktop\STUDY\Java\study\target\classes started by yorky in C:\Users\yorky\Desktop\STUDY\Java\study)
+2023-01-14 14:46:00.195 [main] DEBUG com.mashang.study.StudyApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2023-01-14 14:46:00.195 [main] INFO  com.mashang.study.StudyApplication - No active profile set, falling back to 1 default profile: "default"
+2023-01-14 14:46:00.943 [main] WARN  org.mybatis.spring.mapper.ClassPathMapperScanner - No MyBatis mapper was found in '[com.mashang.study]' package. Please check your configuration.
+2023-01-14 14:46:01.188 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2023-01-14 14:46:01.196 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2023-01-14 14:46:01.197 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-01-14 14:46:01.197 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-14 14:46:01.279 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/student_manager] - Initializing Spring embedded WebApplicationContext
+2023-01-14 14:46:01.279 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1039 ms
+2023-01-14 14:46:01.713 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2023-01-14 14:46:01.725 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path '/student_manager'
+2023-01-14 14:46:01.839 [main] INFO  com.mashang.study.StudyApplication - Started StudyApplication in 1.954 seconds (JVM running for 2.698)
+2023-01-14 15:03:51.212 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.0.20.Final
+2023-01-14 15:03:51.216 [main] INFO  com.mashang.study.StudyApplication - Starting StudyApplication using Java 17.0.4.1 on MARGUERITE with PID 13944 (C:\Users\yorky\Desktop\STUDY\Java\study\target\classes started by yorky in C:\Users\yorky\Desktop\STUDY\Java\study)
+2023-01-14 15:03:51.216 [main] DEBUG com.mashang.study.StudyApplication - Running with Spring Boot v2.7.4, Spring v5.3.23
+2023-01-14 15:03:51.217 [main] INFO  com.mashang.study.StudyApplication - No active profile set, falling back to 1 default profile: "default"
+2023-01-14 15:03:52.225 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2023-01-14 15:03:52.232 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2023-01-14 15:03:52.232 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-01-14 15:03:52.232 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-14 15:03:52.308 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/student_manager] - Initializing Spring embedded WebApplicationContext
+2023-01-14 15:03:52.308 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1036 ms
+2023-01-14 15:03:52.803 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2023-01-14 15:03:52.820 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path '/student_manager'
+2023-01-14 15:03:52.960 [main] INFO  com.mashang.study.StudyApplication - Started StudyApplication in 2.078 seconds (JVM running for 2.745)

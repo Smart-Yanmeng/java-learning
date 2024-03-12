@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mashang.xiaomishopping.dao.IAddressDao">
+
+    <insert id="addAddress" parameterType="com.mashang.xiaomishopping.vo.address.AddressVo">
+        INSERT INTO b_address(user_id, address_dtl, address_tags, area, name, phone)
+        VALUES (#{userId}, #{addressDtl}, #{addressTags}, #{area}, #{name}, #{phone})
+    </insert>
+
+    <update id="updateAddress" parameterType="com.mashang.xiaomishopping.vo.address.AddressVo">
+        UPDATE b_address
+        SET address_dtl = #{addressDtl},
+        address_tags = #{addressTags},
+        area = #{area},
+        name = #{name},
+        phone = #{phone}
+        <where>
+            <if test="addressId != null and addressId != ''">
+                AND address_id = #{addressId}
+            </if>
+        </where>
+    </update>
+
+    <select id="queryAddressByCondition" parameterType="java.lang.Long"
+            resultType="com.mashang.xiaomishopping.entity.BAddressEntity">
+        SELECT * FROM b_address
+        <where>
+            <if test="userId != null and userId != ''">
+                AND user_id = #{userId}
+            </if>
+        </where>
+    </select>
+
+    <delete id="deleteAddressByCondition">
+        DELETE FROM b_address
+        <where>
+            <if test="addressId != null and addressId != ''">
+                AND address_id = #{addressId}
+            </if>
+        </where>
+    </delete>
+
+</mapper>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.dao.IClassDao">
+    <select id="selectClass" resultType="com.mybatis.entity.Clazz">
+        select *
+        from t_class
+        where class_id = 16597268031444;
+    </select>
+
+    <select id="selectClassById" resultType="com.mybatis.entity.Clazz">
+        select *
+        from t_class
+        where class_id = #{classId};
+    </select>
+
+    <select id="selectClassByClass" resultType="com.mybatis.entity.Clazz">
+        select *
+        from t_class
+        where class_id = #{classId};
+    </select>
+
+    <select id="selectClassByClassName" resultType="com.mybatis.entity.Clazz">
+        select *
+        from t_class
+        where class_id like #{classId};
+    </select>
+
+    <insert id="save" parameterType="com.mybatis.entity.Clazz">
+        insert into t_class(class_id, class_no, create_time, name, remark, type)
+        values (#{classId}, #{classNo}, #{createTime}, #{name}, #{remark}, #{type})
+    </insert>
+
+    <delete id="deleteById" parameterType="String">
+        delete
+        from t_class
+        where class_id = #{classId}
+    </delete>
+
+    <update id="updateById" parameterType="com.mybatis.entity.Clazz">
+        update t_class
+        set name = #{name}
+        where class_id = #{classId}
+    </update>
+
+    <select id="selectClassListByCondition" resultType="com.mybatis.entity.Clazz">
+        <!-- select * from t_class where class_id <![CDATA[ > ]]> 16597267904311; -->
+        select * from t_class where class_id &gt; 16597267904311;
+    </select>
+
+    <resultMap id="map2" type="com.mybatis.view.ClazzView">
+        <id property="classId" column="class_id"/>
+        <result property="classNo" column="class_no"/>
+        <result property="createTime" column="create_time"/>
+        <result property="name" column="name"/>
+        <result property="remark" column="remark"/>
+        <result property="type" column="type"/>
+        <collection property="studentsList" ofType="com.mybatis.entity.Student">
+            <id property="studentId" column="student_id"/>
+            <result property="studentNo" column="student_no"/>
+            <result property="name" column="name"/>
+            <result property="age" column="age"/>
+            <result property="sex" column="sex"/>
+            <result property="classId" column="stu_class_id"/>
+            <result property="className" column="class_name"/>
+            <result property="createTime" column="create_time"/>
+            <result property="phone" column="phone"/>
+            <result property="remark" column="remark"/>
+        </collection>
+    </resultMap>
+    <select id="selectClassWithStu" resultType="com.mybatis.view.ClazzView">
+        select c.*,
+               s.student_id,
+               s.student_no,
+               s.name,
+               s.age,
+               s.sex,
+               s.class_id stu_class_id,
+               s.class_name,
+               s.create_time,
+               s.phone,
+               s.remark
+        from t_class c
+                 left join t_student s on c.class_id = s.class_id
+    </select>
+
+    <resultMap id="map3" type="stuView">
+        <id property="studentId" column="student_id"/>
+        <result property="studentNo" column="student_no"/>
+        <result property="name" column="name"/>
+        <result property="age" column="age"/>
+        <result property="sex" column="sex"/>
+        <result property="classId" column="stu_class_id"/>
+        <result property="className" column="class_name"/>
+        <result property="createTime" column="create_time"/>
+        <result property="phone" column="phone"/>
+        <result property="remark" column="remark"/>
+        <association property="clazz" javaType="com.mybatis.entity.Clazz">
+            <id property="classId" column="class_id"/>
+            <result property="classNo" column="class_no"/>
+            <result property="createTime" column="create_time"/>
+            <result property="name" column="name"/>
+            <result property="remark" column="remark"/>
+            <result property="type" column="type"/>
+        </association>
+    </resultMap>
+    <select id="selectStuWithClass" resultMap="map3">
+        select s.student_id,
+               s.student_no,
+               s.name,
+               s.age,
+               s.sex,
+               s.class_id stu_class_id,
+               s.class_name,
+               s.create_time,
+               s.phone,
+               s.remark,
+               c.*
+        from t_student s
+                 left join t_class c on c.class_id = s.class_id
+    </select>
+
+    <select id="selectByCondition" resultType="clazz">
+        select *
+        from t_class
+        <!--        where-->
+        <!--        1 = 1-->
+        <!--        <if test="name != null and name != ''">-->
+        <!--            and name = #{className}-->
+        <!--        </if>-->
+        <!--        <if test="classId != null">-->
+        <!--            and class_id = #{classId}-->
+        <!--        </if>-->
+        <where>
+            <if test="name != null and name != ''">
+                and name = #{className}
+            </if>
+            <if test="classId != null">
+                and class_id = #{classId}
+            </if>
+        </where>
+    </select>
+
+    <select id="selectByIdList" resultType="clazz">
+        select * from t_class
+        <where>
+            <if test="className != null and className != ''">
+                and name = #{className}
+            </if>
+            <foreach collection="ids" item="item" open=" and class_id in (" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+    </select>
+
+</mapper>

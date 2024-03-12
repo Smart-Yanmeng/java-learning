@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mashang.xiaomishopping.dao.IProductDao">
+
+    <select id="selectProductListByCondition" parameterType="com.mashang.xiaomishopping.vo.product.ProductQueryListVo"
+            resultType="com.mashang.xiaomishopping.entity.BProductEntity">
+        SELECT
+        category_id,
+        category_name,
+        product_id,
+        product_intro,
+        product_name,
+        product_picture,
+        product_selling_price,
+        product_title, sort
+        FROM b_product
+        <where>
+            <if test="categoryId != null and categoryId != ''">
+                AND category_id = #{categoryId}
+            </if>
+            <if test="productId != null and productId != ''">
+                AND product_id = #{productId}
+            </if>
+        </where>
+        ORDER BY sort DESC
+        LIMIT ${(pageNum-1)*pageSize},${pageSize};
+    </select>
+
+    <select id="selectHotProductListByCondition" parameterType="java.lang.Long"
+            resultType="com.mashang.xiaomishopping.entity.BHotProductEntity">
+        SELECT
+        product_id,
+        product_intro,
+        product_name,
+        product_picture,
+        product_price,
+        product_selling_price,
+        product_title
+        FROM b_product
+        <where>
+            <if test="categoryId != null and categoryId != ''">
+                AND category_id = #{categoryId}
+            </if>
+        </where>
+        ORDER BY sort DESC
+    </select>
+
+    <select id="selectProductByCondition" resultType="com.mashang.xiaomishopping.entity.BProductInfoEntity">
+        SELECT *
+        FROM b_product
+        <where>
+            <if test="productId != null and productId != ''">
+                AND product_id = #{productId}
+            </if>
+        </where>
+    </select>
+
+</mapper>

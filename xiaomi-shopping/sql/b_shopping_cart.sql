@@ -1,0 +1,1 @@
+INSERT INTO `b_shopping_cart` (`num`, `product_id`, `product_name`, `product_picture`, `product_selling_price`, `shopping_cart_id`, `sort`, `user_id`) VALUES (1, 4, '商品4', '第四个商品的封面', 200, 28, NULL, 14);

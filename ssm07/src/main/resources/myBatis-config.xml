@@ -1,0 +1,44 @@
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <!-- 下划线自动转成驼峰式 -->
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+    <!--  别名的配置  -->
+    <typeAliases>
+        <typeAlias type="com.mybatis.view.StudentView" alias="stuView"/>
+        <typeAlias type="com.mybatis.entity.Clazz" alias="clazz"/>
+    </typeAliases>
+
+    <!-- 配置 mybatis 的环境 -->
+    <environments default="mysql">
+        <!-- 配置 mysql 的环境 -->
+        <environment id="mysql">
+            <!-- 配置事务的类型
+        JDBC 使用数据库自己的事务（局部事务），connect.beginTransition(), connect.commit()等
+        JTA: 使用 jta 事务管理器管理事务（全局事务），使用 userTransition 对象
+        External： 自己（Ibatis）不控制事务，事务交由外部控制，一般在 spring 托管事务中使用-->
+            <transactionManager type="JDBC">
+            </transactionManager>
+            <!-- 配置连接数据库的信息：用的是数据源(连接池) -->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url"
+                          value="jdbc:mysql://localhost:3306/javatest?useSSL=false&amp;serverTimezone=Asia/Shanghai"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 配置 mybatis 映射配置的位置 -->
+    <mappers>
+        <mapper resource="mapper/t_classMapper.xml"/>
+    </mappers>
+
+</configuration>
