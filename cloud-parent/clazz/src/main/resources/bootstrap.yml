@@ -4,9 +4,10 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: 127.0.0.1:18849
+        server-addr: 127.0.0.1:8848
         password: nacos
         username: nacos
+        namespace: e27dca92-9eea-4cfb-972b-ad9192dcaa32
         file-extension: yaml
         shared-configs:
           - data-id: common.yaml
@@ -17,7 +18,8 @@ spring:
       datasource:
         flow:
           nacos:
-            server-addr: localhost:18849
+            server-addr: localhost:8848
+            namespace: e27dca92-9eea-4cfb-972b-ad9192dcaa32
             dataId: ${spring.application.name}-flow-rules
             groupId: DEFAULT_GROUP
             data-type: json

@@ -4,20 +4,22 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: 127.0.0.1:18849
+        server-addr: 127.0.0.1:8848
         password: nacos
         username: nacos
+        namespace: e27dca92-9eea-4cfb-972b-ad9192dcaa32
         file-extension: yaml
         shared-configs:
           - data-id: common.yaml
     sentinel:
       transport:
         dashboard: localhost:8089
-        port: 8719  # 指定控制台调用该服务的端口，用于控制台获取服务的一些信息
+        port: 8719
       datasource:
         flow:
           nacos:
-            server-addr: localhost:18849
+            server-addr: localhost:8848
+            namespace: e27dca92-9eea-4cfb-972b-ad9192dcaa32
             dataId: ${spring.application.name}-flow-rules
             groupId: DEFAULT_GROUP
             data-type: json
