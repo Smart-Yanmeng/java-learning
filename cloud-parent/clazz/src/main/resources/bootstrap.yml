@@ -13,7 +13,7 @@ spring:
           - data-id: common.yaml
     sentinel:
       transport:
-        dashboard: localhost:8089
+        dashboard: localhost:8080
         port: 8719
       datasource:
         flow:

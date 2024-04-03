@@ -13,16 +13,16 @@ spring:
           - data-id: common.yaml
     sentinel:
       transport:
-        dashboard: localhost:8089
+        dashboard: localhost:8080
         port: 8719
       datasource:
         flow:
           nacos:
             server-addr: localhost:8848
             namespace: e27dca92-9eea-4cfb-972b-ad9192dcaa32
-            dataId: ${spring.application.name}-flow-rules
+            dataId: ${spring.application.name}-flow-rules.json
             groupId: DEFAULT_GROUP
-            data-type: json
+#            data-type: json
             rule-type: flow
   profiles:
     active: test
