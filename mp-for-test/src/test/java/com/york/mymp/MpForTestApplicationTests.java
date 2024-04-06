@@ -1,13 +1,12 @@
 package com.york.mymp;
 
-import org.junit.jupiter.api.Test;
+import com.york.mymp.mapper.IUserMapper;
+import jakarta.annotation.Resource;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class MpForTestApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
-
+    @Resource
+    private IUserMapper userMapper;
 }

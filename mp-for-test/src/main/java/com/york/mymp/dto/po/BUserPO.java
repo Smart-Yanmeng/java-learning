@@ -24,7 +24,7 @@ public class BUserPO {
 
     private Integer balance;
 
-    private String create_time;
+    private String createTime;
 
-    private String update_time;
+    private String updateTime;
 }

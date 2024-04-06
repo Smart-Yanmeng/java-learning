@@ -1,5 +1,6 @@
 package com.york.mymp.dto.po;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
@@ -9,7 +10,7 @@ public class BAddressPO {
 
     private Long id;
 
-    private Long user_id;
+    private Long userId;
 
     private String province;
 
@@ -23,9 +24,11 @@ public class BAddressPO {
 
     private String contact;
 
-    private boolean is_default;
+    @TableField("is_default")
+    private boolean isDefault;
 
     private String notes;
 
-    private boolean deleted;
+    @TableField("deleted")
+    private boolean isDeleted;
 }
