@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.york</groupId>
-    <artifactId>springboot3+mp</artifactId>
+    <artifactId>springboot3-mp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>easy-eyesight</name>
     <description>easy-eyesight</description>
@@ -67,6 +67,12 @@
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis-spring</artifactId>
             <version>3.0.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.5.0</version>
         </dependency>
     </dependencies>
 
