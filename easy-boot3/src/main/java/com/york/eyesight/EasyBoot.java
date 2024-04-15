@@ -4,10 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EasyEyesightApplication {
+public class EasyBoot {
 
     public static void main(String[] args) {
-        SpringApplication.run(EasyEyesightApplication.class, args);
+        SpringApplication.run(EasyBoot.class, args);
     }
-
 }
