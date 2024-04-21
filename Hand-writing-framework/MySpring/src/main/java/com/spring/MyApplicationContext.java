@@ -1,7 +1,11 @@
 package com.spring;
 
 import java.io.File;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -11,6 +15,7 @@ public class MyApplicationContext {
 
     private ConcurrentHashMap<String, Object> singletonObjects = new ConcurrentHashMap<>(); // 单例池
     private ConcurrentHashMap<String, BeanDefinition> beanDefinitionMap = new ConcurrentHashMap<>();
+    private List<BeanPostProcessor> beanPostProcessorList = new ArrayList<>();
 
     public MyApplicationContext(Class configClass) {
         this.configClass = configClass;
@@ -24,20 +29,58 @@ public class MyApplicationContext {
             BeanDefinition beanDefinition = entry.getValue();
 
             if (beanDefinition.getScope().equals("singleton")) {
-                Object bean = createBean(beanDefinition); // 单例 Bean
+                Object bean = createBean(beanName, beanDefinition); // 单例 Bean
                 singletonObjects.put(beanName, bean);
             }
         }
     }
 
-    public Object createBean(BeanDefinition beanDefinition) {
+    public Object createBean(String beanName, BeanDefinition beanDefinition) {
         Class clazz = beanDefinition.getClazz();
 
         try {
-            Object instance = clazz.newInstance();
+            Object instance = clazz.getDeclaredConstructor().newInstance();
+
+            // 依赖注入
+            for (Field declaredField : clazz.getDeclaredFields()) {
+                // 判断当前字段上是否有 Autowired 注解
+                if (declaredField.isAnnotationPresent(Autowired.class)) {
+                    Object bean = getBean(declaredField.getName());
+                    declaredField.setAccessible(true);
+                    declaredField.set(instance, bean);
+                }
+            }
+
+            // Aware 回调
+            if (instance instanceof BeanNameAware) {
+                ((BeanNameAware) instance).setBeanName(beanName);
+            }
+
+            // BeanPostProcessor
+            for (BeanPostProcessor beanPostProcessor : beanPostProcessorList) {
+                instance = beanPostProcessor.postProcessBeforeInitialization(instance, beanName);
+            }
+
+            // 初始化
+            if (instance instanceof InitializingBean) {
+                try {
+                    ((InitializingBean) instance).afterPropertiesSet();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            // BeanPostProcessor
+            for (BeanPostProcessor beanPostProcessor : beanPostProcessorList) {
+                instance = beanPostProcessor.postProcessAfterInitialization(instance, beanName);
+            }
 
             return instance;
         } catch (InstantiationException | IllegalAccessException e) {
+            throw new RuntimeException(e);
+        } catch (InvocationTargetException e) {
+            throw new RuntimeException(e);
+        } catch (NoSuchMethodException e) {
             throw new RuntimeException(e);
         }
     }
@@ -45,7 +88,6 @@ public class MyApplicationContext {
     private void scan(Class configClass) {
         ComponentScan componentScanAnnotation = (ComponentScan) configClass.getDeclaredAnnotation(ComponentScan.class);
         String path = componentScanAnnotation.value(); // 扫描路径
-        System.out.println(path);
 
         // 扫描路径下的类
         // Bootstrap -> jre/lib
@@ -68,6 +110,11 @@ public class MyApplicationContext {
                         if (clazz.isAnnotationPresent(Component.class)) {
                             // 表示当前类是一个 Bean
                             // 解析类 -> BeanDefinition
+                            if (BeanPostProcessor.class.isAssignableFrom(clazz)) {
+                                BeanPostProcessor instance = (BeanPostProcessor) clazz.getDeclaredConstructor().newInstance();
+                                beanPostProcessorList.add(instance);
+                            }
+
                             Component componentAnnotation = clazz.getDeclaredAnnotation(Component.class);
                             String beanName = componentAnnotation.value();
 
@@ -85,7 +132,13 @@ public class MyApplicationContext {
                             beanDefinitionMap.put(beanName, beanDefinition);
                         }
 
-                    } catch (ClassNotFoundException e) {
+                    } catch (ClassNotFoundException | NoSuchMethodException e) {
+                        throw new RuntimeException(e);
+                    } catch (InvocationTargetException e) {
+                        throw new RuntimeException(e);
+                    } catch (InstantiationException e) {
+                        throw new RuntimeException(e);
+                    } catch (IllegalAccessException e) {
                         throw new RuntimeException(e);
                     }
                 }
@@ -103,7 +156,7 @@ public class MyApplicationContext {
 
                 return o;
             } else {
-                Object bean = createBean(beanDefinition);
+                Object bean = createBean(beanName, beanDefinition);
 
                 return bean;
             }
