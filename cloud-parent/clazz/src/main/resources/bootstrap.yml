@@ -18,6 +18,8 @@ spring:
       datasource:
         flow:
           nacos:
+            password: nacos
+            username: nacos
             server-addr: localhost:8848
             namespace: e27dca92-9eea-4cfb-972b-ad9192dcaa32
             dataId: ${spring.application.name}-flow-rules
