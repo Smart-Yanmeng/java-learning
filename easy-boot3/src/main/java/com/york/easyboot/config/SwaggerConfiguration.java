@@ -1,4 +1,4 @@
-package com.york.eyesight.config;
+package com.york.easyboot.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
@@ -12,7 +12,7 @@ public class SwaggerConfiguration {
         return new OpenAPI()
                 .info(new Info()
                         .title("SpringBoot API Test")
-                        .description("SpringBoot3.2.4 Application with SpringDoc2.5.0.")
+                        .description("SpringBoot3.2.5 Application with SpringDoc2.5.0.")
                         .version("0.0.1"));
     }
 }

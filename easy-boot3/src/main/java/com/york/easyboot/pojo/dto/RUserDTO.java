@@ -1,4 +1,4 @@
-package com.york.eyesight.pojo.dto;
+package com.york.easyboot.pojo.dto;
 
 public record RUserDTO(String username, String photoUrl) {
     public RUserDTO {

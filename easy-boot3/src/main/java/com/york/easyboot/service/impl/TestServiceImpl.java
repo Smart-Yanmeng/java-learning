@@ -1,6 +1,6 @@
-package com.york.eyesight.service.impl;
+package com.york.easyboot.service.impl;
 
-import com.york.eyesight.service.ITestService;
+import com.york.easyboot.service.ITestService;
 import org.springframework.stereotype.Service;
 
 @Service

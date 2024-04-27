@@ -1,4 +1,4 @@
-package com.york.eyesight.config;
+package com.york.easyboot.config;
 
 public enum CODE {
 

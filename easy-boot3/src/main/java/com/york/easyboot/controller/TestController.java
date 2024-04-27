@@ -1,7 +1,7 @@
-package com.york.eyesight.controller;
+package com.york.easyboot.controller;
 
-import com.york.eyesight.pojo.dto.RUserDTO;
-import com.york.eyesight.service.impl.TestServiceImpl;
+import com.york.easyboot.pojo.dto.RUserDTO;
+import com.york.easyboot.service.impl.TestServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;

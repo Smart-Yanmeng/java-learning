@@ -1,4 +1,4 @@
-package com.york.eyesight.pojo.po;
+package com.york.easyboot.pojo.po;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

@@ -1,4 +1,4 @@
-package com.york.eyesight.config;
+package com.york.easyboot.config;
 
 import com.baomidou.mybatisplus.annotation.IEnum;
 import com.baomidou.mybatisplus.core.MybatisParameterHandler;

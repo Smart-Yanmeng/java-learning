@@ -1,4 +1,4 @@
-package com.york.eyesight.config;
+package com.york.easyboot.config;
 
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import org.mybatis.spring.annotation.MapperScan;
@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 //TODO 如果使用这个方式的话,记得一定要指定sqlSessionTemplateRef或sqlSessionFactoryRef https://github.com/mybatis/spring-boot-starter/wiki/Quick-Start-for-building-native-image#how-to-use-mapperscan
-@MapperScan(basePackages = "com.york.eyesight.mapper", sqlSessionTemplateRef = "sqlSessionTemplate")
+@MapperScan(basePackages = "com.york.easyboot.mapper", sqlSessionTemplateRef = "sqlSessionTemplate")
 public class MybatisPlusConfig {
 
     @Bean

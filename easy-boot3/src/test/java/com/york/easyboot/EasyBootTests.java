@@ -1,6 +1,6 @@
-package com.york.eyesight;
+package com.york.easyboot;
 
-import com.york.eyesight.pojo.dto.RUserDTO;
+import com.york.easyboot.pojo.dto.RUserDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

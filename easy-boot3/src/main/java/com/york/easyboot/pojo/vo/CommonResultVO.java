@@ -1,4 +1,4 @@
-package com.york.eyesight.pojo.vo;
+package com.york.easyboot.pojo.vo;
 
 import lombok.Data;
 
