@@ -17,3 +17,11 @@ mybatis-plus:
     db-config:
       id-type: assign_id
       update-strategy: not_null
+
+logging:
+  file:
+    name: C:/log/ease-eyesight/log.log
+  logback:
+    rollingpolicy:
+      file-name-pattern: ${LOG_FILE}.%d{yyyy-MM-dd}.%i.gz
+      max-file-size: 1MB
