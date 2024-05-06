@@ -9,5 +9,10 @@ public class Client {
         SellTickets sellTickets = (SellTickets) proxyFactory.getProxyObject();
 
         sellTickets.sell();
+
+        System.out.println(sellTickets.getClass());
+
+        while (true) {
+        }
     }
 }

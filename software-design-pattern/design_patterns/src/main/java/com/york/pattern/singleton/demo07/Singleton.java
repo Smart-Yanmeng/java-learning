@@ -1,6 +1,5 @@
 package com.york.pattern.singleton.demo07;
 
-import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -20,7 +19,6 @@ public class Singleton implements Serializable {
     }
 
     // 当进行反序列化时，会自动调用该方法，返回指定的对象
-    @Serial
     public Object readResolve() {
         return SingletonHolder.INSTANCE;
     }

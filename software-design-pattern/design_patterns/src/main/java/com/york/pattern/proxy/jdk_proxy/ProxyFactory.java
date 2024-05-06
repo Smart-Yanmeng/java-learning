@@ -7,25 +7,27 @@ import java.lang.reflect.Proxy;
 public class ProxyFactory {
 
     // 声明目标对象
-    private TrainStation mTrainStation = new TrainStation();
+//    private TrainStation mTrainStation = new TrainStation();
 
     // 获取代理对象的方法
     public SellTickets getProxyObject() {
 
         SellTickets proxyInstance = (SellTickets) Proxy.newProxyInstance(
 
-                mTrainStation.getClass().getClassLoader(),
-                mTrainStation.getClass().getInterfaces(),
+                TrainStation.class.getClassLoader(),
+                TrainStation.class.getInterfaces(),
                 new InvocationHandler() {
 
                     @Override
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
-                        System.out.println("JDK 动态代理点买票");
+                        if (method.getName().equals("sell")) {
+                            System.out.println("代售点卖票");
+                        }
 
-                        Object obj = method.invoke(mTrainStation, args);
+//                        Object obj = method.invoke(mTrainStation, args);
 
-                        return obj;
+                        return null;
                     }
                 }
         );
