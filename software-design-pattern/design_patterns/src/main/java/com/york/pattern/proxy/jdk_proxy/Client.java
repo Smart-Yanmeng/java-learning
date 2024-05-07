@@ -7,7 +7,6 @@ public class Client {
         ProxyFactory proxyFactory = new ProxyFactory();
 
         SellTickets sellTickets = (SellTickets) proxyFactory.getProxyObject();
-
         sellTickets.sell();
 
         System.out.println(sellTickets.getClass());

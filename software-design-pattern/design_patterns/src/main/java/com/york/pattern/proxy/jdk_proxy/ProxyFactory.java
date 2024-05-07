@@ -7,15 +7,15 @@ import java.lang.reflect.Proxy;
 public class ProxyFactory {
 
     // 声明目标对象
-//    private TrainStation mTrainStation = new TrainStation();
+    private final TrainStation mTrainStation = new TrainStation();
 
     // 获取代理对象的方法
     public SellTickets getProxyObject() {
 
         SellTickets proxyInstance = (SellTickets) Proxy.newProxyInstance(
 
-                TrainStation.class.getClassLoader(),
-                TrainStation.class.getInterfaces(),
+                mTrainStation.getClass().getClassLoader(),
+                mTrainStation.getClass().getInterfaces(),
                 new InvocationHandler() {
 
                     @Override
@@ -25,9 +25,7 @@ public class ProxyFactory {
                             System.out.println("代售点卖票");
                         }
 
-//                        Object obj = method.invoke(mTrainStation, args);
-
-                        return null;
+                        return method.invoke(mTrainStation, args);
                     }
                 }
         );
