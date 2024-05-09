@@ -34,12 +34,14 @@ public class ThirdPartyTVClass implements ThirdPartyTVLib {
     }
 
     private void connectToServer(String server) {
+
         System.out.println("Connecting to " + server);
 
         System.out.println("Connected!");
     }
 
     private HashMap<String, Video> getRandomVideos() {
+
         System.out.println("Downloading populars... ");
 
         this.experienceNetworkLatency();
@@ -57,7 +59,9 @@ public class ThirdPartyTVClass implements ThirdPartyTVLib {
     }
 
     private void experienceNetworkLatency() {
+
         int randomLatency = this.random(5, 10);
+        System.out.println("Network latency: " + randomLatency * 10 + "ms");
 
         for (int i = 0; i < randomLatency; i++) {
             try {
