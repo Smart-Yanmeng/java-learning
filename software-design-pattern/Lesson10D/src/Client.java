@@ -7,7 +7,11 @@ public class Client {
         Downloader downloaderA = new Downloader(new ThirdPartyTVClass());
         Downloader downloaderB = new Downloader(new TVClassProxy());
 
-        long result = test(downloaderA) - test(downloaderB);
+        long latencyA = test(downloaderA);
+        System.out.println("==========================");
+        long latencyB = test(downloaderB);
+
+        long result = latencyA - latencyB;
 
         System.out.println("Time difference: " + result + "ms");
     }
@@ -16,13 +20,10 @@ public class Client {
 
         long before = System.currentTimeMillis();
 
+        downloader.renderVideoPage("First");
         downloader.renderAllVideos();
-//        downloader.renderVideoPage("catzzzzzzzzz");
-//        downloader.renderVideoPage("catzzzzzzzzz");
-//        downloader.renderVideoPage("catzzzzzzzzz");
-//        downloader.renderVideoPage("catzzzzzzzzz");
-//        downloader.renderVideoPage("catzzzzzzzzz");
-//        downloader.renderVideoPage("catzzzzzzzzz");
+        downloader.renderAllVideos();
+        downloader.renderVideoPage("First");
 
         long after = System.currentTimeMillis();
 

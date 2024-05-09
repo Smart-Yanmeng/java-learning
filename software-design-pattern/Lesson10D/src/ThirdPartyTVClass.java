@@ -47,11 +47,11 @@ public class ThirdPartyTVClass implements ThirdPartyTVLib {
         this.experienceNetworkLatency();
 
         HashMap<String, Video> hmap = new HashMap<String, Video>();
-        hmap.put("catzzzzzzzzz", new Video("catzzzzzzzzz", "Catzzzz.avi"));
-        hmap.put("mkafksangasj", new Video("mkafksangasj", "Dog play with ball.mp4"));
-        hmap.put("dancesvideoo", new Video("dancesvideoo", "Dancing video.mpq"));
-        hmap.put("dlsdk5jfsljfl", new Video("dlsdk5jfsljfl", "Barcelona vs RealM.mov"));
-        hmap.put("3sdfgsd1j333", new Video("3sdfgsd1j333", "Programing lesson#1.avi"));
+        hmap.put("First", new Video("First", "First.avi"));
+        hmap.put("Second", new Video("Second", "Second.mp4"));
+        hmap.put("Third", new Video("Third", "Third.mpq"));
+        hmap.put("Fourth", new Video("Fourth", "Fourth.mov"));
+        hmap.put("Fifth", new Video("Fifth", "Fifth.avi"));
 
         System.out.println("Done!");
 

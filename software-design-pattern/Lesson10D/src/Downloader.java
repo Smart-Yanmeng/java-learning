@@ -4,13 +4,16 @@ import java.util.HashMap;
 
 public class Downloader {
 
-    private ThirdPartyTVLib api;
+    private final ThirdPartyTVLib api;
 
     public Downloader(ThirdPartyTVLib api) {
         this.api = api;
     }
 
     void renderVideoPage(String id) {
+
+        System.out.println("--------------------------");
+
         Video video = api.getVideo(id);
 
         System.out.println("src.Video page (imagine fancy HTML)");

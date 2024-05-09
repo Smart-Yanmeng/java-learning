@@ -6,19 +6,19 @@ public class TVClassProxy implements ThirdPartyTVLib {
 
     private final ThirdPartyTVLib servers = new ThirdPartyTVClass();
 
-    HashMap<String, Video> cachePopular = new HashMap<>();
+//    HashMap<String, Video> cachePopular = new HashMap<>();
     HashMap<String, Video> cacheAll = new HashMap<>();
 
     @Override
     public HashMap<String, Video> listVideos() {
 
-        if (this.cachePopular.isEmpty()) {
-            this.cachePopular = this.servers.listVideos();
+        if (this.cacheAll.isEmpty()) {
+            this.cacheAll = this.servers.listVideos();
         } else {
             System.out.println("Retrieved list from cache.");
         }
 
-        return this.cachePopular;
+        return this.cacheAll;
     }
 
     @Override
