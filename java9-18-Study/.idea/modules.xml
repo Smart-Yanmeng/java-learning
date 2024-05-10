@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/java9-18-Study.iml" filepath="$PROJECT_DIR$/java9-18-Study.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java9-18-Study1.iml" filepath="$PROJECT_DIR$/java9-18-Study1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/local-variable/local-variable.iml" filepath="$PROJECT_DIR$/local-variable/local-variable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module-instanceof/module-instanceof.iml" filepath="$PROJECT_DIR$/module-instanceof/module-instanceof.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module-record/module-record.iml" filepath="$PROJECT_DIR$/module-record/module-record.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module-sealed-class/module-sealed-class.iml" filepath="$PROJECT_DIR$/module-sealed-class/module-sealed-class.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module-simplify/module-simplify.iml" filepath="$PROJECT_DIR$/module-simplify/module-simplify.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module-stream/module-stream.iml" filepath="$PROJECT_DIR$/module-stream/module-stream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module-string/module-string.iml" filepath="$PROJECT_DIR$/module-string/module-string.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module-switch/module-switch.iml" filepath="$PROJECT_DIR$/module-switch/module-switch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module-try-with-resources/module-try-with-resources.iml" filepath="$PROJECT_DIR$/module-try-with-resources/module-try-with-resources.iml" />
+    </modules>
+  </component>
+</project>
