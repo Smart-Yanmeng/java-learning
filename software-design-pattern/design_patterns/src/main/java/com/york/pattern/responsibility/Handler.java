@@ -12,10 +12,6 @@ public abstract class Handler {
 
     protected Handler nextHandler;
 
-    public Handler(int numStart) {
-        this.numStart = numStart;
-    }
-
     public Handler(int numStart, int numEnd) {
         this.numStart = numStart;
         this.numEnd = numEnd;
