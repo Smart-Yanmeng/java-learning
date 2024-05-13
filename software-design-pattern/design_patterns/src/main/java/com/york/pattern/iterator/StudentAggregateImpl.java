@@ -5,7 +5,7 @@ import java.util.List;
 
 public class StudentAggregateImpl implements StudentAggregate {
 
-    private List<Student> list = new ArrayList<>();
+    private final List<Student> list = new ArrayList<>();
 
     @Override
     public void addStudent(Student student) {
