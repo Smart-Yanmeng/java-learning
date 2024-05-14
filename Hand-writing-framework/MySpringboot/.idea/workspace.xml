@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b76e1db-0c61-4906-bb1a-7c4d378d964b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/springboot/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springboot/src/main/java/com/york/MySpringApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/springboot/src/main/java/com/york/MySpringBootApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/york/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/york/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../software-design-pattern/design_patterns/src/main/java/com/york/spring/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../software-design-pattern/design_patterns/src/main/java/com/york/spring/dao/IUserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../software-design-pattern/design_patterns/src/main/java/com/york/spring/dao/impl/UserDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../software-design-pattern/design_patterns/src/main/java/com/york/spring/service/IUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../software-design-pattern/design_patterns/src/main/java/com/york/spring/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../software-design-pattern/design_patterns/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../software-design-pattern/design_patterns/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../software-design-pattern/design_patterns/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../software-design-pattern/design_patterns/src/main/java/com/york/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../software-design-pattern/design_patterns/src/main/java/com/york/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,23 +30,23 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Smart-Yanmeng"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Smart-Yanmeng&quot;
   }
-}]]></component>
-  <component name="GitHubPullRequestState"><![CDATA[{
-  "prStates": []
-}]]></component>
-  <component name="GitLabMergeRequestsSettings"><![CDATA[{}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Smart-Yanmeng/java-learning.git",
-    "accountId": "92e38a6c-15e7-4c51-aace-0a6afee3df8a"
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: []
+}</component>
+  <component name="GitLabMergeRequestsSettings">{}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Smart-Yanmeng/java-learning.git&quot;,
+    &quot;accountId&quot;: &quot;92e38a6c-15e7-4c51-aace-0a6afee3df8a&quot;
   }
-}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{}]]></component>
+}</component>
+  <component name="KubernetesApiProvider">{}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -58,10 +57,10 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2fj2o1eQQMMZ1HcOnSGoE8jMwUF" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -80,6 +79,7 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/yorky/Desktop/STUDY/java-learning/Hand-writing-framework/MySpringboot",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -111,6 +111,7 @@
       <option name="presentableId" value="Default" />
       <updated>1710304818874</updated>
       <workItem from="1714300340984" duration="2363000" />
+      <workItem from="1715678618291" duration="614000" />
     </task>
     <servers />
   </component>
