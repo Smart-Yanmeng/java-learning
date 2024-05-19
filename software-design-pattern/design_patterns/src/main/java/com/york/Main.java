@@ -14,14 +14,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
         // 延迟加载
-        BeanFactory factory = new DefaultListableBeanFactory();
-        BeanDefinitionReader reader = new XmlBeanDefinitionReader((BeanDefinitionRegistry) factory);
-        reader.loadBeanDefinitions(new ClassPathResource("applicationContext.xml"));
+//        BeanFactory factory = new DefaultListableBeanFactory();
+//        BeanDefinitionReader reader = new XmlBeanDefinitionReader((BeanDefinitionRegistry) factory);
+//        reader.loadBeanDefinitions(new ClassPathResource("applicationContext.xml"));
 
-        UserServiceImpl userService = factory.getBean("userService", UserServiceImpl.class);
+        UserServiceImpl userService = context.getBean("userService", UserServiceImpl.class);
         userService.save();
     }
 }

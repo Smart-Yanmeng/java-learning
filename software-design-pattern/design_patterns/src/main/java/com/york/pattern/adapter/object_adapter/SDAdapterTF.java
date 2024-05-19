@@ -2,7 +2,7 @@ package com.york.pattern.adapter.object_adapter;
 
 public class SDAdapterTF implements SDCard {
 
-    private TFCard tfCard;
+    private final TFCard tfCard;
 
     public SDAdapterTF(TFCard tfCard) {
         this.tfCard = tfCard;
