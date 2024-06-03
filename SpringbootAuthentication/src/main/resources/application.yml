@@ -6,6 +6,9 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
+#    app:
+#      jwtSecret: mySecretKey123!#264422
+#      jwtExpirationMs: 300000
 
 mybatis-plus:
   type-aliases-package: com.york.security
@@ -17,3 +20,14 @@ mybatis-plus:
     db-config:
       id-type: assign_id
       update-strategy: not_null
+logging:
+  level:
+    org:
+      springframework: DEBUG
+      springframework.security: DEBUG
+    hibernate:
+      SQL: DEBUG
+    com:
+      york:
+        security: DEBUG
+
