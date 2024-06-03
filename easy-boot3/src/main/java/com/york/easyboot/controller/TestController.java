@@ -30,4 +30,9 @@ public class TestController {
 
         return "HELLO WORLD!";
     }
+
+    @GetMapping
+    public String hello() {
+        return "Hello World !";
+    }
 }
