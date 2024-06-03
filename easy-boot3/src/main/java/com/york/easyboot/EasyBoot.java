@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
 @EnableAspectJAutoProxy
@@ -40,6 +41,12 @@ public class EasyBoot {
 
     @Test
     public void test() {
-        System.out.println("test");
+
+        String str = "york233";
+
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String encode = passwordEncoder.encode(str);
+
+        System.out.println(encode);
     }
 }
