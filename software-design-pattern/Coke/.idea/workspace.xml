@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="192caede-38d2-472c-b720-416fea3d68be" name="Changes" comment="" />
+    <list default="true" id="192caede-38d2-472c-b720-416fea3d68be" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,18 +15,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Smart-Yanmeng"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Smart-Yanmeng&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Smart-Yanmeng/java-learning.git",
-    "accountId": "92e38a6c-15e7-4c51-aace-0a6afee3df8a"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Smart-Yanmeng/java-learning.git&quot;,
+    &quot;accountId&quot;: &quot;92e38a6c-15e7-4c51-aace-0a6afee3df8a&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -35,9 +37,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2h52P9FnATFWbY6Xz8DZpbRom56" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -51,7 +53,7 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/yorky/Desktop/STUDY/java-learning/software-design-pattern/Coke",
+    "last_opened_file_path": "C:/Users/yorky/Desktop/期末报告项目/Coke",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
@@ -68,8 +70,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-77ac15d44862-intellij.indexing.shared.core-IU-242.10180.25" />
-        <option value="bundled-js-predefined-1d06a55b98c1-cb551a44b0f8-JavaScript-IU-242.10180.25" />
+        <option value="bundled-jdk-9823dce3aa75-89b38a74fcf8-intellij.indexing.shared.core-IU-242.14146.16" />
+        <option value="bundled-js-predefined-d6986cc7102b-e20c6e5d2dc8-JavaScript-IU-242.14146.16" />
       </set>
     </attachedChunks>
   </component>
@@ -82,6 +84,7 @@
       <option name="presentableId" value="Default" />
       <updated>1710304818874</updated>
       <workItem from="1716869591627" duration="166000" />
+      <workItem from="1717835651102" duration="263000" />
     </task>
     <servers />
   </component>
