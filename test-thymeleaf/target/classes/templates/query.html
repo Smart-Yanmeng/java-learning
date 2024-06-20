@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Query</title>
+</head>
+<body>
+<form th:action="@{/list}" method="get">
+    <label>
+        <input type="text" name="username">
+    </label>
+    <button type="submit">查询</button>
+</form>
+
+<div th:if="${isEmpty}">查询失败</div>
+</body>
+</html>
