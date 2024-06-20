@@ -10,4 +10,10 @@
         where username = #{username}
           and password = #{password}
     </select>
+
+    <select id="listUsers" resultType="com.york.testthymeleaf.entity.UserEntity" parameterType="java.lang.String">
+        SELECT *
+        from user
+        WHERE username like CONCAT("%", #{username}, "%")
+    </select>
 </mapper>
