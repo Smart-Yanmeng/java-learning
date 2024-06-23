@@ -23,10 +23,10 @@ public class EasyBoot {
     public static void main(String[] args) {
         ConfigurableApplicationContext ioc = SpringApplication.run(EasyBoot.class, args);
 
-//        String[] BeanDefinitions = ioc.getBeanDefinitionNames();
-//        for (String name : BeanDefinitions) {
-//            System.out.println(name);
-//        }
+        String[] BeanDefinitions = ioc.getBeanDefinitionNames();
+        for (String name : BeanDefinitions) {
+            System.out.println(name);
+        }
 
         String[] beanNamesForType = ioc.getBeanNamesForType(JsonFactoryBuilder.class);
         for (String name : beanNamesForType) {

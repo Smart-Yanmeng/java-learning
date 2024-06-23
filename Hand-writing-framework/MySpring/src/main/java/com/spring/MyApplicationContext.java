@@ -76,11 +76,8 @@ public class MyApplicationContext {
             }
 
             return instance;
-        } catch (InstantiationException | IllegalAccessException e) {
-            throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(e);
-        } catch (NoSuchMethodException e) {
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException |
+                 NoSuchMethodException e) {
             throw new RuntimeException(e);
         }
     }
@@ -132,13 +129,8 @@ public class MyApplicationContext {
                             beanDefinitionMap.put(beanName, beanDefinition);
                         }
 
-                    } catch (ClassNotFoundException | NoSuchMethodException e) {
-                        throw new RuntimeException(e);
-                    } catch (InvocationTargetException e) {
-                        throw new RuntimeException(e);
-                    } catch (InstantiationException e) {
-                        throw new RuntimeException(e);
-                    } catch (IllegalAccessException e) {
+                    } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException |
+                             InvocationTargetException | InstantiationException e) {
                         throw new RuntimeException(e);
                     }
                 }
