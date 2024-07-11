@@ -31,6 +31,7 @@ public class UserServiceImpl extends ServiceImpl<IUserMapper, BUserPO> implement
 
         LoginUserDetails userDetails = (LoginUserDetails) authenticate.getPrincipal();
 
-        return TokenUtils.genAccessToken(userDetails.getUsername());
+//        return TokenUtils.genAccessToken(userDetails.getUsername());
+        return null;
     }
 }
