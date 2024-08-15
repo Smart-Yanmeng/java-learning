@@ -1,0 +1,37 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:tx="http://www.springframework.org/schema/tx"-->
+<!--       xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+<!--    https://www.springframework.org/schema/beans/spring-beans.xsd-->
+<!--    http://www.springframework.org/schema/data/jpa-->
+<!--    https://www.springframework.org/schema/data/jpa/spring-jpa.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">-->
+
+<!--    <jpa:repositories base-package="com.york.repositories" entity-manager-factory-ref="entityManagerFactory"-->
+<!--                      transaction-manager-ref="transactionManager"/>-->
+
+<!--    <bean name="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">-->
+<!--        <property name="jpaVendorAdapter">-->
+<!--            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">-->
+<!--                <property name="generateDdl" value="true"/>-->
+<!--                <property name="showSql" value="true"/>-->
+<!--            </bean>-->
+<!--        </property>-->
+
+<!--        <property name="packagesToScan" value="com.york.pojo"/>-->
+<!--        <property name="dataSource" ref="dataSource"/>-->
+<!--    </bean>-->
+
+<!--    <bean class="com.alibaba.druid.pool.DruidDataSource" name="dataSource">-->
+<!--        <property name="url" value="jdbc:mysql://localhost:3306/spring_data_jpa?characterEncoding=UTF-8"/>-->
+<!--        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>-->
+<!--        <property name="username" value="root"/>-->
+<!--        <property name="password" value="root"/>-->
+<!--    </bean>-->
+
+<!--    <bean class="org.springframework.orm.jpa.JpaTransactionManager" name="transactionManager">-->
+<!--        <property name="entityManagerFactory" ref="entityManagerFactory"/>-->
+<!--    </bean>-->
+
+<!--    <tx:annotation-driven transaction-manager="transactionManager"/>-->
+<!--</beans>-->

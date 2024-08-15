@@ -31,63 +31,67 @@ import Layout from '@/layout'
 // 公共路由
 export const constantRoutes = [
   {
+    path: '/test-page',
+    component: () => import('@/views/temp/TestPage'),
+  },
+  {
     path: '/redirect',
     component: Layout,
     hidden: true,
     children: [
       {
         path: '/redirect/:path(.*)',
-        component: () => import('@/views/redirect')
-      }
-    ]
+        component: () => import('@/views/ruoyi/redirect'),
+      },
+    ],
   },
   {
     path: '/login',
-    component: () => import('@/views/login'),
-    hidden: true
+    component: () => import('@/views/auth/login'),
+    hidden: true,
   },
   {
     path: '/register',
-    component: () => import('@/views/register'),
-    hidden: true
+    component: () => import('@/views/auth/register'),
+    hidden: true,
   },
   {
     path: '/404',
     component: () => import('@/views/error/404'),
-    hidden: true
+    hidden: true,
   },
   {
     path: '/401',
     component: () => import('@/views/error/401'),
-    hidden: true
-  },
-  {
-    path: '',
-    component: Layout,
-    redirect: 'index',
-    children: [
-      {
-        path: 'index',
-        component: () => import('@/views/index'),
-        name: 'Index',
-        meta: { title: '首页', icon: 'dashboard', affix: true }
-      }
-    ]
-  },
-  {
-    path: '/user',
-    component: Layout,
     hidden: true,
-    redirect: 'noredirect',
-    children: [
-      {
-        path: 'profile',
-        component: () => import('@/views/system/user/profile/index'),
-        name: 'Profile',
-        meta: { title: '个人中心', icon: 'user' }
-      }
-    ]
-  }
+  },
+  // {
+  //   path: '',
+  //   component: Layout,
+  //   redirect: 'index',
+  //   children: [
+  //     {
+  //       path: 'index',
+  //       component: () => import('@/views/ruoyi/index'),
+  //       name: 'Index',
+  //       meta: { title: '首页', icon: 'dashboard', affix: true },
+  //     },
+  //   ],
+  // },
+  // {
+  //   path: '/user',
+  //   component: Layout,
+  //   hidden: true,
+  //   redirect: 'noredirect',
+  //   children: [
+  //     {
+  //       path: 'profile',
+  //       component: () => import('@/views/ruoyi/system/user/profile/index'),
+  //       name: 'Profile',
+  //       meta: { title: '个人中心', icon: 'user' },
+  //     },
+  //   ],
+  // },
 ]
 
 // 动态路由，基于用户权限动态去加载
@@ -100,11 +104,11 @@ export const dynamicRoutes = [
     children: [
       {
         path: 'role/:userId(\\d+)',
-        component: () => import('@/views/system/user/authRole'),
+        component: () => import('@/views/ruoyi/system/user/authRole'),
         name: 'AuthRole',
-        meta: { title: '分配角色', activeMenu: '/system/user' }
-      }
-    ]
+        meta: { title: '分配角色', activeMenu: '/system/user' },
+      },
+    ],
   },
   {
     path: '/system/role-auth',
@@ -114,11 +118,11 @@ export const dynamicRoutes = [
     children: [
       {
         path: 'user/:roleId(\\d+)',
-        component: () => import('@/views/system/role/authUser'),
+        component: () => import('@/views/ruoyi/system/role/authUser'),
         name: 'AuthUser',
-        meta: { title: '分配用户', activeMenu: '/system/role' }
-      }
-    ]
+        meta: { title: '分配用户', activeMenu: '/system/role' },
+      },
+    ],
   },
   {
     path: '/system/dict-data',
@@ -128,11 +132,11 @@ export const dynamicRoutes = [
     children: [
       {
         path: 'index/:dictId(\\d+)',
-        component: () => import('@/views/system/dict/data'),
+        component: () => import('@/views/ruoyi/system/dict/data'),
         name: 'Data',
-        meta: { title: '字典数据', activeMenu: '/system/dict' }
-      }
-    ]
+        meta: { title: '字典数据', activeMenu: '/system/dict' },
+      },
+    ],
   },
   {
     path: '/monitor/job-log',
@@ -142,11 +146,11 @@ export const dynamicRoutes = [
     children: [
       {
         path: 'index/:jobId(\\d+)',
-        component: () => import('@/views/monitor/job/log'),
+        component: () => import('@/views/ruoyi/monitor/job/log'),
         name: 'JobLog',
-        meta: { title: '调度日志', activeMenu: '/monitor/job' }
-      }
-    ]
+        meta: { title: '调度日志', activeMenu: '/monitor/job' },
+      },
+    ],
   },
   {
     path: '/tool/gen-edit',
@@ -156,22 +160,28 @@ export const dynamicRoutes = [
     children: [
       {
         path: 'index/:tableId(\\d+)',
-        component: () => import('@/views/tool/gen/editTable'),
+        component: () => import('@/views/ruoyi/tool/gen/editTable'),
         name: 'GenEdit',
-        meta: { title: '修改生成配置', activeMenu: '/tool/gen' }
-      }
-    ]
-  }
+        meta: { title: '修改生成配置', activeMenu: '/tool/gen' },
+      },
+    ],
+  },
 ]
 
 // 防止连续点击多次路由报错
-let routerPush = Router.prototype.push;
+let routerPush = Router.prototype.push
+let routerReplace = Router.prototype.replace
+// push
 Router.prototype.push = function push(location) {
-  return routerPush.call(this, location).catch(err => err)
+  return routerPush.call(this, location).catch((err) => err)
+}
+// replace
+Router.prototype.replace = function push(location) {
+  return routerReplace.call(this, location).catch((err) => err)
 }
 
 export default new Router({
   mode: 'history', // 去掉url中的#
   scrollBehavior: () => ({ y: 0 }),
-  routes: constantRoutes
+  routes: constantRoutes,
 })

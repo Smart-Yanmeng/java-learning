@@ -1,20 +1,35 @@
 <template>
   <div v-if="!item.hidden">
-    <template v-if="hasOneShowingChild(item.children,item) && (!onlyOneChild.children||onlyOneChild.noShowingChildren)&&!item.alwaysShow">
+    <template
+      v-if="
+        hasOneShowingChild(item.children, item) &&
+        (!onlyOneChild.children || onlyOneChild.noShowingChildren) &&
+        !item.alwaysShow
+      "
+    >
       <app-link v-if="onlyOneChild.meta" :to="resolvePath(onlyOneChild.path, onlyOneChild.query)">
-        <el-menu-item :index="resolvePath(onlyOneChild.path)" :class="{'submenu-title-noDropdown':!isNest}">
-          <item :icon="onlyOneChild.meta.icon||(item.meta&&item.meta.icon)" :title="onlyOneChild.meta.title" />
+        <el-menu-item :index="resolvePath(onlyOneChild.path)" :class="{ 'submenu-title-noDropdown': !isNest }">
+          <item
+            :icon="onlyOneChild.meta.icon || (item.meta && item.meta.icon)"
+            :title="onlyOneChild.meta.title"
+            :el-icon="onlyOneChild.meta.elIcon || (item.meta && item.meta.elIcon)"
+          />
         </el-menu-item>
       </app-link>
     </template>
 
     <el-submenu v-else ref="subMenu" :index="resolvePath(item.path)" popper-append-to-body>
       <template slot="title">
-        <item v-if="item.meta" :icon="item.meta && item.meta.icon" :title="item.meta.title" />
+        <item
+          v-if="item.meta"
+          :icon="item.meta && item.meta.icon"
+          :title="item.meta.title"
+          :el-icon="item.meta && item.meta.elIcon"
+        />
       </template>
       <sidebar-item
-        v-for="child in item.children"
-        :key="child.path"
+        v-for="(child, index) in item.children"
+        :key="child.path + index"
         :is-nest="true"
         :item="child"
         :base-path="resolvePath(child.path)"
@@ -39,16 +54,16 @@ export default {
     // route object
     item: {
       type: Object,
-      required: true
+      required: true,
     },
     isNest: {
       type: Boolean,
-      default: false
+      default: false,
     },
     basePath: {
       type: String,
-      default: ''
-    }
+      default: '',
+    },
   },
   data() {
     this.onlyOneChild = null
@@ -57,9 +72,9 @@ export default {
   methods: {
     hasOneShowingChild(children = [], parent) {
       if (!children) {
-        children = [];
+        children = []
       }
-      const showingChildren = children.filter(item => {
+      const showingChildren = children.filter((item) => {
         if (item.hidden) {
           return false
         } else {
@@ -76,7 +91,7 @@ export default {
 
       // Show parent if there are no child router to display
       if (showingChildren.length === 0) {
-        this.onlyOneChild = { ... parent, path: '', noShowingChildren: true }
+        this.onlyOneChild = { ...parent, path: '', noShowingChildren: true }
         return true
       }
 
@@ -90,11 +105,26 @@ export default {
         return this.basePath
       }
       if (routeQuery) {
-        let query = JSON.parse(routeQuery);
+        let query = JSON.parse(routeQuery)
         return { path: path.resolve(this.basePath, routePath), query: query }
       }
       return path.resolve(this.basePath, routePath)
-    }
-  }
+    },
+  },
 }
 </script>
+
+<style lang="scss" scoped>
+/** 修复自定义菜单使用 el-icon 时展开和折起icon显示对齐问题 */
+.el-menu {
+  .menu-el-icon {
+    transform: translateX(-4px);
+  }
+}
+.el-menu--collapse.el-menu {
+  .menu-el-icon {
+    transform: translateX(0px);
+    margin: 0 16px !important;
+  }
+}
+</style>
