@@ -2,8 +2,11 @@ package com.york.websocket.ws;
 
 import com.alibaba.fastjson2.JSON;
 import com.york.websocket.config.GetHttpSessionConfig;
+import com.york.websocket.pojo.IMessageMapper;
 import com.york.websocket.pojo.Message;
+import com.york.websocket.pojo.MessageService;
 import com.york.websocket.utils.MessageUtils;
+import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpSession;
 import jakarta.websocket.*;
 import jakarta.websocket.server.ServerEndpoint;
@@ -18,9 +21,16 @@ import java.util.concurrent.ConcurrentHashMap;
 @Component
 public class ChatEndpoint {
 
+    private static MessageService messageService;
+
     private static final Map<String, Session> onlineUsers = new ConcurrentHashMap<>();
 
     private HttpSession httpSession;
+
+    @Resource
+    public void setMessageService(MessageService messageService) {
+        ChatEndpoint.messageService = messageService;
+    }
 
     @OnOpen
     public void onOpen(Session session, EndpointConfig config) throws IOException {
@@ -38,6 +48,8 @@ public class ChatEndpoint {
         Message msg = JSON.parseObject(jsonMessage, Message.class);
         String toName = msg.getToName();
         String message = msg.getMessage();
+
+        messageService.saveMessage(new Message(toName, message));
 
         Session session = onlineUsers.get(toName);
         session.getBasicRemote().sendText(MessageUtils.getMessage(false, toName, message));
