@@ -1,19 +1,14 @@
 package com.duwei.cp.abe.structure;
 
-import com.duwei.cp.abe.attribute.Attribute;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.util.List;
-
-/**
- * @BelongsProject: CP-ABE
- * @BelongsPackage: com.duwei.cp.abe.structure
- * @Author: duwei
- * @Date: 2022/7/26 15:25
- * @Description: 根据模型构建访问树
- */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class AccessTreeBuildModel {
+
     //访问树节点的唯一性标识
     private Integer id;
     //内部节点还是叶子节点
@@ -26,10 +21,6 @@ public class AccessTreeBuildModel {
     private String attribute;
     //父亲ID,-1 表示没有父亲
     private Integer parentId;
-
-    private AccessTreeBuildModel(){
-
-    }
 
     public static AccessTreeBuildModel innerAccessTreeBuildModel(int id,int threshold,int index,int parentId){
         AccessTreeBuildModel buildModel = new AccessTreeBuildModel();

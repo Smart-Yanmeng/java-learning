@@ -28,5 +28,4 @@ public class PlainText {
         this.messageStr = messageStr;
         this.messageValue = G1.newElementFromBytes(messageStr.getBytes(StandardCharsets.UTF_8)).getImmutable();
     }
-
 }

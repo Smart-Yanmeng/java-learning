@@ -33,7 +33,7 @@ public class Polynomial {
      */
     private Field z_r;
 
-    public Polynomial(int degree,Element s0,Field z_r) {
+    public Polynomial(int degree, Element s0, Field z_r) {
         this.degree = degree;
         this.z_r = z_r;
         coefficients = new Element[degree + 1];
@@ -43,7 +43,7 @@ public class Polynomial {
         }
     }
 
-    public Polynomial(int degree, Element[] coefficients,Field z_r) {
+    public Polynomial(int degree, Element[] coefficients, Field z_r) {
         this.degree = degree;
         this.z_r = z_r;
         this.coefficients = coefficients;
@@ -51,14 +51,15 @@ public class Polynomial {
 
     /**
      * 获取多项式代入x的值
+     *
      * @param x
      * @return
      */
-    public Element getValue(Element x){
+    public Element getValue(Element x) {
         //初始化为0
         Element result = z_r.newZeroElement();
         Element temp = z_r.newOneElement();
-        for (Element coefficient : coefficients){
+        for (Element coefficient : coefficients) {
             result.add(coefficient.mul(temp));
             temp.mul(x);
         }
@@ -66,10 +67,10 @@ public class Polynomial {
     }
 
 
-    public static Element lagrangeCoefficient(Element i, List<Element> s,Element x,Field zr){
+    public static Element lagrangeCoefficient(Element i, List<Element> s, Element x, Field zr) {
         Element result = zr.newOneElement();
         for (Element element : s) {
-            if (!i.equals(element)){
+            if (!i.equals(element)) {
                 result.mul(x.sub(element).div(i.sub(element)));
             }
         }

@@ -8,11 +8,15 @@ import com.duwei.cp.abe.structure.AccessTreeBuildModel;
 import com.duwei.cp.abe.structure.AccessTreeNode;
 import com.duwei.cp.abe.text.CipherText;
 import com.duwei.cp.abe.text.PlainText;
+import com.duwei.cp.abe.util.SerializeUtils;
 import it.unisa.dia.gas.jpbc.Pairing;
 import it.unisa.dia.gas.plaf.jpbc.pairing.PairingFactory;
 
+import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Test {
 
@@ -25,53 +29,76 @@ public class Test {
 
         // 2.1 设置用户 A 属性
         List<Attribute> userAAttributes = Arrays.asList(
-                new Attribute("学生", systemKey.getPublicKey()),
+//                new Attribute("学生", systemKey.getPublicKey()),
                 new Attribute("二班", systemKey.getPublicKey())
         );
 
         // 2.2 设置用户 B 属性
         List<Attribute> userBAttributes = Arrays.asList(
-                new Attribute("打工人", systemKey.getPublicKey()),
-                new Attribute("菜鸡", systemKey.getPublicKey())
+                new Attribute("博士", systemKey.getPublicKey()),
+                new Attribute("帅哥", systemKey.getPublicKey())
         );
 
         // 3. 生成用户 A 私钥
         UserPrivateKey userAPrivateKey = cpAneEngine.keyGen(systemKey.getMasterPrivateKey(), userAAttributes);
-        System.out.println("userAPrivateKey : " + userAPrivateKey);
+//        System.out.println("userAPrivateKey: " + userAPrivateKey);
 
         // 3. 生成用户 B 私钥
         UserPrivateKey userBPrivateKey = cpAneEngine.keyGen(systemKey.getMasterPrivateKey(), userBAttributes);
-        System.out.println("userBPrivateKey : " + userBPrivateKey);
+//        System.out.println("userBPrivateKey: " + userBPrivateKey);
+
 
         // 4.明文
-        String plainTextStr = "Hello HCK, I'm York!";
-
+        String plainTextStr = "Mp1XZU3JWA9gpMz6DrFFemn4te/6pSDVtn/a1zD1G5M=";
         PlainText plainText = new PlainText(plainTextStr, systemKey.getPublicKey());
-        System.out.println("plainTextStr : " + plainTextStr);
 
         // 5.构建访问树
         AccessTree accessTree = getAccessTree(systemKey.getPublicKey());
 
         // 6.加密
         CipherText cipherText = cpAneEngine.encrypt(systemKey.getPublicKey(), plainText, accessTree);
-        System.out.println("cipherText : " + cipherText);
+        System.out.println(cipherText);
+        System.out.println("====================================");
+
+        // TEST //
+        SerializeUtils serializeUtils = new SerializeUtils();
+        String serializedCipherText = serializeUtils.serializeCipherText(cipherText);
+        CipherText text = serializeUtils.deserializeCipherText(serializedCipherText, systemKey.getPublicKey());
+
+        System.out.println(text);
+        System.out.println("====================================");
+        System.out.println(text.equals(cipherText));
+        System.out.println(text.getC().equals(cipherText.getC()));
+        System.out.println(text.getC_wave().equals(cipherText.getC_wave()));
+        System.out.println(text.getC_y_map().equals(cipherText.getC_y_map()));
+        System.out.println(text.getC_y_pie_map().equals(cipherText.getC_y_pie_map()));
+//        System.out.println(text.getAccessTree().equals(cipherText.getAccessTree()));
+
+        Set<Attribute> diff = new HashSet<>();
+        for (Attribute key : text.getC_y_map().keySet()) {
+            System.out.println(key + " : " + text.getC_y_map().get(key) + " : " + cipherText.getC_y_map().get(key));
+            if (cipherText.getC_y_map().containsKey(key) && !text.getC_y_map().get(key).equals(cipherText.getC_y_map().get(key))) {
+                diff.add(key);
+            }
+        }
+        System.out.println("值不同的键: " + diff);
 
         // 7.用户 A 解密
-        String decryptStrA = cpAneEngine.decryptToStr(systemKey.getPublicKey(), userAPrivateKey, cipherText);
-        System.out.println("decryptStrA : " + decryptStrA);
+        String decryptStrA = cpAneEngine.decryptToStr(systemKey.getPublicKey(), userAPrivateKey, text);
+        System.out.println("decryptStrA: " + decryptStrA);
 
         // 8.用户 B 解密
-        String decryptStrB = cpAneEngine.decryptToStr(systemKey.getPublicKey(), userBPrivateKey, cipherText);
-        System.out.println("decryptStrB : " + decryptStrB);
+        String decryptStrB = cpAneEngine.decryptToStr(systemKey.getPublicKey(), userBPrivateKey, text);
+        System.out.println("decryptStrB: " + decryptStrB);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         test1();
     }
 
     public static AccessTree getAccessTree(PublicKey publicKey) {
 
-        AccessTreeBuildModel[] accessTreeBuildModels = new AccessTreeBuildModel[7];
+        AccessTreeBuildModel[] accessTreeBuildModels = new AccessTreeBuildModel[10];
 
         // 根节点 ID 必须为 1
         accessTreeBuildModels[0] = AccessTreeBuildModel.innerAccessTreeBuildModel(1, 2, 1, -1);
@@ -81,6 +108,9 @@ public class Test {
         accessTreeBuildModels[4] = AccessTreeBuildModel.innerAccessTreeBuildModel(5, 1, 4, 1);
         accessTreeBuildModels[5] = AccessTreeBuildModel.leafAccessTreeBuildModel(6, 1, "二班", 5);
         accessTreeBuildModels[6] = AccessTreeBuildModel.leafAccessTreeBuildModel(7, 2, "帅哥", 5);
+        accessTreeBuildModels[7] = AccessTreeBuildModel.innerAccessTreeBuildModel(8, 1, 4, 1);
+        accessTreeBuildModels[8] = AccessTreeBuildModel.leafAccessTreeBuildModel(9, 1, "ALL", 8);
+        accessTreeBuildModels[9] = AccessTreeBuildModel.leafAccessTreeBuildModel(10, 2, "SUPER", 8);
 
         return AccessTree.build(publicKey, accessTreeBuildModels);
     }
@@ -95,5 +125,4 @@ public class Test {
             pre(child);
         }
     }
-
 }

@@ -9,8 +9,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
     </properties>
 
     <repositories>
@@ -19,19 +19,53 @@
             <url>https://jitpack.io</url>
         </repository>
     </repositories>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>21</source>
+                    <target>21</target>
+                    <compilerArgs>--enable-preview</compilerArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.24</version>
+            <version>1.18.34</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.github.emilianobonassi.jpbc/jpbc-plaf -->
+        <dependency>
+            <groupId>com.github.emilianobonassi.jpbc</groupId>
+            <artifactId>jpbc-plaf</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.github.emilianobonassi.jpbc/jpbc-api -->
+        <dependency>
+            <groupId>com.github.emilianobonassi.jpbc</groupId>
+            <artifactId>jpbc-api</artifactId>
+            <version>2.0.0</version>
         </dependency>
 
         <dependency>
-            <groupId>com.github.emilianobonassi</groupId>
-            <artifactId>jpbc</artifactId>
-            <version>2.0.0</version>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.15.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+
     </dependencies>
 
 </project>

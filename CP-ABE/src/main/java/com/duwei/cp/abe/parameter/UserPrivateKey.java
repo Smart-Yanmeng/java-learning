@@ -2,21 +2,18 @@ package com.duwei.cp.abe.parameter;
 
 import com.duwei.cp.abe.attribute.Attribute;
 import it.unisa.dia.gas.jpbc.Element;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @BelongsProject: JPBC-ABE
- * @BelongsPackage: com.duwei.jpbc.cp.abe.parameter
- * @Author: duwei
- * @Date: 2022/7/22 16:06
- * @Description: 用户私钥
- */
 @Data
+@AllArgsConstructor
 public class UserPrivateKey {
+
     private Element D;
     private PairingParameter pairingParameter;
     public Map<Attribute,Element> D_j_map;
@@ -28,7 +25,6 @@ public class UserPrivateKey {
         D_j_pie_map = new HashMap<>();
     }
 
-
     public void putDj(Attribute attribute,Element D_j){
         D_j_map.put(attribute,D_j);
     }
@@ -36,7 +32,6 @@ public class UserPrivateKey {
     public void putDjPie(Attribute attribute,Element D_j_pie){
         D_j_pie_map.put(attribute,D_j_pie);
     }
-
 
     public Element getDj(Attribute attribute){
         for (Attribute attribute1 : D_j_map.keySet()) {
@@ -75,6 +70,4 @@ public class UserPrivateKey {
         }
         return userPrivateKey;
     }
-
-
 }
