@@ -2,6 +2,7 @@ package com.York;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class ThreadPool {
 
@@ -41,13 +42,29 @@ public class ThreadPool {
         System.out.println("Time: " + (end - start) + "ms");
     }
 
+    private static void threadPoolSubmit() {
+
+        try {
+            // 创建一个固定大小的线程池
+            ExecutorService threadPool = Executors.newFixedThreadPool(10);
+
+            // Execute 的返回值是 void
+            // 若中间出现了异常，会在子线程中抛出，主线程捕捉不到异常
+            threadPool.execute(() -> System.out.println(Thread.currentThread().getName() + " is running..."));
+
+            // Submit 的返回值是 Future 类型
+            // 若中间出现了异常，不会立马抛出。而是在调用 Future 的 get 方法时抛出，并且主线程可以捕捉到异常
+            Future<String> future = threadPool.submit(() -> "Hello, World!");
+
+            // Future 的 get 方法会阻塞当前线程，直到任务执行完毕
+            System.out.println(future.get());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static void main(String[] args) {
 
-            try {
-                thread();
-                pool();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+        threadPoolSubmit();
     }
 }
