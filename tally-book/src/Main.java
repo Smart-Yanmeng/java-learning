@@ -4,7 +4,7 @@ public class Main {
         // from 2024-10-16
         Integer principal = 2310;
         Double ratePerMonth = 0.02;
-        Integer days = 25;
+        Integer days = 26;
 
         System.out.println("The principal and interest is: " + calculateMoneyByDay(principal, ratePerMonth, days));
     }
